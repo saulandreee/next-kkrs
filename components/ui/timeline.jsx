@@ -53,15 +53,15 @@ TimelineItem.displayName = "TimelineItem";
 
 const timelineDotVariants = cva();
 
-const TimelineDot = React.forwardRef(({ className, status, customIcon, ...props }, ref) => (
+const TimelineDot = React.forwardRef(({ className, status, customIcon, children, ...props }, ref) => (
   <div
     role="status"
     className={cn("timeline-dot", timelineDotVariants({ status }), className)}
     ref={ref}
     {...props}
   >
-    <Circle className="relative left-[14px]" />
     {customIcon}
+    {children}
   </div>
 ));
 TimelineDot.displayName = "TimelineDot";

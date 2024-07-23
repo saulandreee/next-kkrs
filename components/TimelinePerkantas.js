@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { Timeline, TimelineContent, TimelineDot, TimelineHeading, TimelineItem, TimelineLine } from "@/components/ui/timeline";
-import { User } from "lucide-react";
+import { Coffee, Sparkle, Sparkles, User } from "lucide-react";
 
 export default function TimelinePerkantas() {
   const [history, setHistory] = useState([
     {
-      date: "06/29/1971",
+      date: "29 Juni 1971",
       text: "Pelayanan Mahasiswa Perkantas dirintis oleh Soen Siregar, Jonathan Parapak, David Wang, dan Jimmy Kuswandi.",
     },
     {
@@ -48,10 +48,10 @@ export default function TimelinePerkantas() {
   ]);
   return (
     <div>
-      <h5 className="text-2xl font-bold mb-4">Sejarah PSKJ</h5>
+      <h5 className="text-3xl font-bold mb-4 text-pourri-500">Sejarah PSKJ</h5>
       <Timeline
         position="center"
-        className="ml-16"
+        // className="ml-16"
       >
         {history.map((poin, index) => {
           return (
@@ -60,11 +60,20 @@ export default function TimelinePerkantas() {
               key={index}
               className="relative"
             >
-              <User className="absolute top-0 left-0" />
-              <TimelineDot status="done" />
-              <TimelineLine done />
-              <TimelineHeading className="font-semibold text-lg">{poin.date}</TimelineHeading>
-              <TimelineContent>{poin.text}</TimelineContent>
+              <TimelineDot status="done">
+                <span className="flex items-center justify-center rounded-full w-10 h-10 relative left-1.5 bg-pourri-500 text-mandy-500">
+                  <Sparkles
+                    className="w-6 h-6"
+                    fill="#e85d75"
+                  />
+                </span>
+              </TimelineDot>
+              <TimelineLine
+                done
+                className="bg-pourri-500"
+              />
+              <TimelineHeading className="font-semibold text-lg ml-2">{poin.date}</TimelineHeading>
+              <TimelineContent className="border-2 border-mandy-600/50 bg-pourri-500/80 p-4 rounded-lg mb-4">{poin.text}</TimelineContent>
             </TimelineItem>
           );
         })}
