@@ -13,7 +13,7 @@ export default function Header() {
           className="flex gap-2.5 items-center"
         >
           <Image
-            src="/images/logo-nocross@4x.png"
+            src="/images/logo-nocross-sm.png"
             alt="logo"
             width={48}
             height={48}

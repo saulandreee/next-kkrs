@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Timeline, TimelineContent, TimelineDot, TimelineHeading, TimelineItem, TimelineLine } from "@/components/ui/timeline";
 import { Coffee, Sparkle, Sparkles, User } from "lucide-react";
 
 export default function TimelinePerkantas() {
+  const [isShowAll, setShowAll] = useState(false);
   const [history, setHistory] = useState([
     {
       date: "29 Juni 1971",
@@ -46,9 +47,15 @@ export default function TimelinePerkantas() {
       text: "14 sekolah terus dilayani dan 5 orang staf siswa aktif melayani serta 2 staf yang sedang melanjutkan studinya.",
     },
   ]);
+
+  // useEffect(() => {
+  //   if(isShowAll) {
+
+  //   }
+  // }, [isShowAll])
   return (
     <div>
-      <h5 className="text-3xl font-bold mb-4 text-pourri-500">Sejarah PSKJ</h5>
+      <h3 className="text-3xl font-bold mb-4 text-mandy-500">Sejarah PSKJ</h3>
       <Timeline
         position="center"
         // className="ml-16"
@@ -61,7 +68,7 @@ export default function TimelinePerkantas() {
               className="relative"
             >
               <TimelineDot status="done">
-                <span className="flex items-center justify-center rounded-full w-10 h-10 relative left-1.5 bg-pourri-500 text-mandy-500">
+                <span className="flex items-center justify-center rounded-full w-10 h-10 relative left-1.5 bg-pourri-500 text-mandy-500 border-2 border-mandy-500 mt-1">
                   <Sparkles
                     className="w-6 h-6"
                     fill="#e85d75"
@@ -70,7 +77,7 @@ export default function TimelinePerkantas() {
               </TimelineDot>
               <TimelineLine
                 done
-                className="bg-pourri-500"
+                className="bg-mandy-500"
               />
               <TimelineHeading className="font-semibold text-lg ml-2">{poin.date}</TimelineHeading>
               <TimelineContent className="border-2 border-mandy-600/50 bg-pourri-500/80 p-4 rounded-lg mb-4">{poin.text}</TimelineContent>

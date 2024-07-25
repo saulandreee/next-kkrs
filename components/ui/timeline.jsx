@@ -120,7 +120,7 @@ const TimelineLine = React.forwardRef(({ className, done = false, ...props }, re
       role="separator"
       aria-orientation="vertical"
       className={cn(
-        "col-start-2 col-end-3 row-start-2 row-end-2 mx-auto flex h-full min-h-16 w-1 justify-center rounded-full",
+        "col-start-2 col-end-3 row-start-2 row-end-2 mx-auto flex h-full min-h-16 w-0.5 justify-center rounded-full",
         done ? "bg-pourri-50" : "bg-mandy-500",
         className
       )}
