@@ -3,14 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Button from "./Button";
+import MobileHeader from "./MobileHeader";
 
 export default function Header() {
   return (
-    <header className="bg-pourri-500 border-b border-mandy-300/50 h-16 flex items-center sticky top-0 z-10">
-      <nav className="w-full max-w-[1280px] px-10 mx-auto flex justify-between">
+    <header className="bg-white h-14 lg:h-[88px] flex items-center py-3 px-4 sticky top-0 z-10">
+      <nav className="w-full max-w-[1280px] mx-auto flex gap-2 items-center">
+        <MobileHeader />
         <Link
           href={"/"}
-          className="flex gap-2.5 items-center"
+          className="flex gap-2.5 items-center flex-1"
         >
           <Image
             src="/logo.png"
@@ -18,15 +20,11 @@ export default function Header() {
             width={48}
             height={48}
             quality={100}
+            sizes="(min-width:300px) 28px, (min-width: 600px) 48px"
           />
-          <span className="text-2xl font-bold">KKRS 2024</span>
+          <span className="text-mandy-500 font-extrabold">KKRS 2024</span>
         </Link>
-        <Button
-          size="lg"
-          className=""
-        >
-          Saat Teduh Yuk!
-        </Button>
+        <Button className="">Saat Teduh Yuk!</Button>
       </nav>
     </header>
   );
