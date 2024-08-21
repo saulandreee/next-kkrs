@@ -12,7 +12,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import Button from "./Button";
-import { MenuIcon } from "lucide-react";
+import { ArrowLeft, MenuIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -28,7 +28,15 @@ export default function MobileHeader() {
         </Button>
       </DrawerTrigger>
       <DrawerContent>
-        <div className="px-3 py-1">
+        <div className="px-3 py-1 flex gap-2 items-center">
+          <DrawerClose asChild>
+            <Button
+              size="icon"
+              variant="ghost"
+            >
+              <ArrowLeft />
+            </Button>
+          </DrawerClose>
           <Link
             href={"/"}
             className="flex gap-2.5 items-center flex-1"
