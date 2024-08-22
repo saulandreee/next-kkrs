@@ -1,4 +1,5 @@
 import Article from "@/components/Article";
+import ArticleCarousel from "@/components/ArticleCarousel";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import TimelinePerkantas from "@/components/TimelinePerkantas";
@@ -10,7 +11,7 @@ import Link from "next/link";
 
 var listArticle = [
   {
-    image: faker.image.city(80, 64, true),
+    image: faker.image.url(80, 64),
     title: faker.lorem.sentences(1),
     date: faker.date.recent(),
     author: faker.person.fullName(),
@@ -18,7 +19,7 @@ var listArticle = [
     bible: "Yohanes 3 : 16",
   },
   {
-    image: faker.image.city(80, 64, true),
+    image: faker.image.url(80, 64),
     title: faker.lorem.sentences(1),
     date: faker.date.recent(),
     author: faker.person.fullName(),
@@ -26,7 +27,7 @@ var listArticle = [
     bible: "Yohanes 3 : 16",
   },
   {
-    image: faker.image.city(80, 64, true),
+    image: faker.image.url(80, 64),
     title: faker.lorem.sentences(1),
     date: faker.date.recent(),
     author: faker.person.fullName(),
@@ -34,7 +35,7 @@ var listArticle = [
     bible: "Yohanes 3 : 16",
   },
   {
-    image: faker.image.city(80, 64, true),
+    image: faker.image.url(80, 64),
     title: faker.lorem.sentences(1),
     date: faker.date.recent(),
     author: faker.person.fullName(),
@@ -42,7 +43,7 @@ var listArticle = [
     bible: "Yohanes 3 : 16",
   },
   {
-    image: faker.image.city(80, 64, true),
+    image: faker.image.url(80, 64),
     title: faker.lorem.sentences(1),
     date: faker.date.recent(),
     author: faker.person.fullName(),
@@ -50,7 +51,57 @@ var listArticle = [
     bible: "Yohanes 3 : 16",
   },
   {
-    image: faker.image.city(80, 64, true),
+    image: faker.image.url(80, 64),
+    title: faker.lorem.sentences(1),
+    date: faker.date.recent(),
+    author: faker.person.fullName(),
+    description: faker.lorem.sentences(2),
+    bible: "Yohanes 3 : 16",
+  },
+];
+var bigListArticle = [
+  {
+    image: faker.image.url(240, 150),
+    title: faker.lorem.sentences(1),
+    date: faker.date.recent(),
+    author: faker.person.fullName(),
+    description: faker.lorem.sentences(2),
+    bible: "Yohanes 3 : 16",
+  },
+  {
+    image: faker.image.url(240, 150),
+    title: faker.lorem.sentences(1),
+    date: faker.date.recent(),
+    author: faker.person.fullName(),
+    description: faker.lorem.sentences(2),
+    bible: "Yohanes 3 : 16",
+  },
+  {
+    image: faker.image.url(240, 150),
+    title: faker.lorem.sentences(1),
+    date: faker.date.recent(),
+    author: faker.person.fullName(),
+    description: faker.lorem.sentences(2),
+    bible: "Yohanes 3 : 16",
+  },
+  {
+    image: faker.image.url(240, 150),
+    title: faker.lorem.sentences(1),
+    date: faker.date.recent(),
+    author: faker.person.fullName(),
+    description: faker.lorem.sentences(2),
+    bible: "Yohanes 3 : 16",
+  },
+  {
+    image: faker.image.url(240, 120),
+    title: faker.lorem.sentences(1),
+    date: faker.date.recent(),
+    author: faker.person.fullName(),
+    description: faker.lorem.sentences(2),
+    bible: "Yohanes 3 : 16",
+  },
+  {
+    image: faker.image.url(240, 150),
     title: faker.lorem.sentences(1),
     date: faker.date.recent(),
     author: faker.person.fullName(),
@@ -63,7 +114,7 @@ export default function Home() {
   return (
     <main className="">
       <Section
-        className={"py-16"}
+        className={"pt-16 pb-8"}
         wrapperClassName={"flex relative px-4 justify-between"}
       >
         <div className="min-w-[200px] max-w-[300px]">
@@ -88,7 +139,7 @@ export default function Home() {
         </div>
       </Section>
       <Section className={cn("relative min-h-[468px]")}>
-        <div className="relative z-10 grid gap-4 py-16">
+        <div className="relative z-[1] grid gap-4 py-16">
           <h1 className="text-2xl text-center font-semibold max-w-[300px] mx-auto">Yuk Mulai Hari dengan Saat Teduh!</h1>
           <div className="grid gap-4">
             <div className="flex justify-center gap-4">
@@ -159,7 +210,7 @@ export default function Home() {
       </Section>
       <Section
         className=""
-        wrapperClassName={"grid gap-4"}
+        wrapperClassName={"grid gap-4 py-8"}
       >
         <h1 className="text-2xl font-semibold text-center mx-auto">Renungan Saat Teduh</h1>
         <div className="grid gap-2">
@@ -181,6 +232,21 @@ export default function Home() {
         >
           <Button variant="ghost">Lihat Renungan lainnya</Button>
         </Link>
+      </Section>
+      <Section
+        className={"py-8"}
+        wrapperClassName={"grid gap-4"}
+      >
+        <h1 className="text-2xl font-semibold text-center mx-auto">Artikel Rohani Lainnya</h1>
+        <ArticleCarousel>
+          {bigListArticle.map((article, index) => (
+            <Article
+              article={article}
+              color={"white"}
+              key={index}
+            />
+          ))}
+        </ArticleCarousel>
       </Section>
     </main>
   );

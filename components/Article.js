@@ -5,7 +5,7 @@ import moment from "moment";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-const cardVariants = cva("", {
+const cardVariants = cva("overflow-hidden", {
   variants: {
     variant: {
       default: "rounded-xl",
@@ -51,14 +51,17 @@ export default function Article({ article, variant, color, type, className }) {
         </>
       ) : (
         <>
-          <Image
-            src={article.image}
-            alt={article.title}
-            quality={100}
-            width={240}
-            height={150}
-          />
-          <div className="grid gap-0.5">
+          <div className="!aspect-[240/150]">
+            <Image
+              src={article.image}
+              alt={article.title}
+              quality={100}
+              width={240}
+              height={150}
+              className="object-cover w-full"
+            />
+          </div>
+          <div className="grid gap-0.5 p-2">
             <div className="text-base font-semibold line-clamp-2">{article.title}</div>
             {type === "sate" ? (
               <div>
