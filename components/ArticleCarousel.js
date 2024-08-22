@@ -44,32 +44,46 @@ export default function ArticleCarousel({ children }) {
   );
 
   return (
-    <div className="w-full max-w-xs mx-auto">
+    <div className="w-full max-w-[360px] mx-auto">
       <Carousel
         className="w-full"
         setApi={setApi}
+        opts={{
+          loop: true,
+        }}
       >
-        <CarouselContent>
+        <CarouselContent className="p-0.5 -ml-2 md:-ml-3">
           {children.map((item, index) => (
-            <CarouselItem key={index}>{item}</CarouselItem>
+            <CarouselItem
+              key={index}
+              className="pl-2 md:pl-3 basis-[80%]"
+            >
+              {item}
+            </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="flex justify-center mt-4 space-x-2">
-          {items.map((_, index) => (
+        <div className="flex justify-center space-x-2 items-center mt-2.5">
+          <CarouselPrevious
+            variant="secondary"
+            className="!relative !top-0 !left-0 !right-0 !bottom-0 !translate-0 !translate-x-0 !translate-y-0 mx-2 bg-white shadow"
+          />
+          {children.map((_, index) => (
             <Button
               key={index}
               variant="ghost"
               size="icon"
-              className={`w-2 h-2 p-0 rounded-full ${current === index ? "bg-primary" : "bg-secondary"}`}
+              className={`w-3 h-3 p-0 rounded-full transition-all ${current === index ? "bg-pourri-700 w-8" : "bg-pourri-600"}`}
               onClick={() => handleBulletClick(index)}
               aria-current={current === index ? "true" : "false"}
             >
               <span className="sr-only">Go to slide {index + 1}</span>
             </Button>
           ))}
+          <CarouselNext
+            variant="secondary"
+            className="!relative !top-0 !left-0 !right-0 !bottom-0 !translate-0 !translate-x-0 !translate-y-0 mx-2 bg-white shadow"
+          />
         </div>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </div>
   );

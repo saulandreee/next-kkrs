@@ -248,6 +248,17 @@ export default function Home() {
           ))}
         </ArticleCarousel>
       </Section>
+      <Section
+        className={"py-8"}
+        wrapperClassName={"px-3 grid gap-6"}
+      >
+        <h1 className="text-2xl font-semibold">Yuk Kenalan Sama Persekutuan Siswa Kristen Jakarta (PSKJ)! </h1>
+        <p className="text-sm">
+          Remaja merupakan masa mencari identitas diri. Maka dari itu, pelayanan siswa Perkantas berfokus pada penginjilan dan pemuridan kepada siswa,
+          sehingga siswa dapat mempertuhankan Kristus dalam setiap aspek hidupnya, serta menangkap identitasnya sebagai yang murid Kristus, menjadi
+          garam dan terang bagi lingkungan sekitar, gereja, bangsa, dan dunia.
+        </p>
+      </Section>
     </main>
   );
 }

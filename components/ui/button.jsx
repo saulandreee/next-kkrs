@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default: "bg-mandy-500 text-mandy-50 hover:bg-mandy-500/90 ",
         destructive: "bg-red-500 text-mandy-50 hover:bg-red-500/90 ",
         outline: "border-2 border-mandy-500 bg-pourri-500 hover:bg-pourri-300 hover:text-mandy-600 ",
-        secondary: "bg-pourri-500 text-mandy-900 hover:bg-mandy-100/80 ",
+        secondary: "bg-pourri-500 text-mandy-900 hover:bg-pourri-600/80 ",
         ghost: "hover:bg-mandy-500 hover:text-mandy-50 ",
         link: "text-mandy-500 underline-offset-4 hover:underline ",
       },
