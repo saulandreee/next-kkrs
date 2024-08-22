@@ -235,7 +235,7 @@ export default function Home() {
       </Section>
       <Section
         className={"py-8"}
-        wrapperClassName={"grid gap-4"}
+        wrapperClassName={"grid gap-4 px-0"}
       >
         <h1 className="text-2xl font-semibold text-center mx-auto">Artikel Rohani Lainnya</h1>
         <ArticleCarousel>
@@ -258,6 +258,112 @@ export default function Home() {
           sehingga siswa dapat mempertuhankan Kristus dalam setiap aspek hidupnya, serta menangkap identitasnya sebagai yang murid Kristus, menjadi
           garam dan terang bagi lingkungan sekitar, gereja, bangsa, dan dunia.
         </p>
+        <h2 className="text-lg font-semibold text-mandy text-center">Kegiatan Rutin PSKJ</h2>
+        <div className="">
+          <div className="grid gap-1 p-4 text-center">
+            <Image
+              src={"/images/landing/event-1.svg"}
+              alt="Student Fellowship"
+              quality={100}
+              width={120}
+              height={120}
+              className="mx-auto"
+            />
+            <h3 className="font-semibold">Student Fellowship</h3>
+            <p className="text-sm">
+              Diadakan di wilayah masing-masing setiap bulan (minggu ke 1 dan 3), dengan tujuan membina siswa khususnya pengurus Rohkris dalam
+              melayani.
+            </p>
+          </div>
+          <div className="grid gap-1 p-4 text-center">
+            <Image
+              src={"/images/landing/event-2.svg"}
+              alt="Kelompok Kecil"
+              quality={100}
+              width={120}
+              height={120}
+              className="mx-auto"
+            />
+            <h3 className="font-semibold">Kelompok Kecil</h3>
+            <p className="text-sm">
+              Terdiri dari pengurus atau siswa yang aktif dalam kegiatan Rohkris dan dipimpin oleh TPS (Tim Pembimbing siswa) serta Staf Siswa..
+            </p>
+          </div>
+          <div className="grid gap-1 p-4 text-center">
+            <Image
+              src={"/images/landing/event-1.svg"}
+              alt="Student Fellowship"
+              quality={100}
+              width={120}
+              height={120}
+              className="mx-auto"
+            />
+            <h3 className="font-semibold">Visitasi Sekolah</h3>
+            <p className="text-sm">Pendampingan dan kunjungan Rohkris yang dikerjakan oleh TPS.</p>
+          </div>
+        </div>
+      </Section>
+      <Section wrapperClassName={"p-0 px-0 pb-8"}>
+        <h2 className="text-lg font-semibold text-mandy text-center">Kegiatan Non-Rutin PSKJ</h2>
+        <ArticleCarousel>
+          <div className="relative rounded-xl shadow aspect-[224/232] overflow-hidden">
+            <Image
+              src={"/images/landing/event-kkrs.png"}
+              alt="KKRS"
+              quality={100}
+              width={224}
+              height={232}
+              className="object-cover w-full absolute top-0"
+            />
+            <div className="absolute bottom-0 text-white px-4 pb-2.5">
+              <h3 className="font-semibold mb-1.5">KKR Siswa</h3>
+              <p>Kebaktian Kebangunan Rohani Siswa Jakarta</p>
+            </div>
+          </div>
+          <div className="relative rounded-xl shadow aspect-[224/232] overflow-hidden">
+            <Image
+              src={"/images/landing/event-kkrs.png"}
+              alt="KKRS"
+              quality={100}
+              width={224}
+              height={232}
+              className="object-cover w-full absolute top-0"
+            />
+            <div className="absolute bottom-0 text-white px-4 pb-2.5">
+              <h3 className="font-semibold mb-1.5">KKR Siswa</h3>
+              <p>Kebaktian Kebangunan Rohani Siswa Jakarta</p>
+            </div>
+          </div>
+          <div className="relative rounded-xl shadow aspect-[224/232] overflow-hidden">
+            <Image
+              src={"/images/landing/event-kkrs.png"}
+              alt="KKRS"
+              quality={100}
+              width={224}
+              height={232}
+              className="object-cover w-full absolute top-0"
+            />
+            <div className="absolute bottom-0 text-white px-4 pb-2.5">
+              <h3 className="font-semibold mb-1.5">KKR Siswa</h3>
+              <p>Kebaktian Kebangunan Rohani Siswa Jakarta</p>
+            </div>
+          </div>
+          <div className="relative rounded-xl shadow aspect-[224/232] overflow-hidden">
+            <div className="relative">
+              <Image
+                src={"/images/landing/event-kkrs.png"}
+                alt="KKRS"
+                quality={100}
+                fill
+                className="object-cover h-full absolute top-0"
+              />
+            </div>
+            <div className="absolute bottom-0 t1.5xt-white px-4 z-[1]">
+              <h3 className="font-semibold mb-4">KKR Siswa</h3>
+              <p className="text-sm">Kebaktian Kebangunan Rohani Siswa Jakarta</p>
+            </div>
+          </div>
+        </ArticleCarousel>
       </Section>
     </main>
   );
