@@ -5,11 +5,11 @@ import moment from "moment";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-const cardVariants = cva("overflow-hidden", {
+const cardVariants = cva("shadow overflow-hidden", {
   variants: {
     variant: {
       default: "rounded-xl",
-      list: "rounded-xl flex gap-2 p-2 shadow",
+      list: "rounded-xl flex gap-2 p-2",
     },
     color: {
       white: "bg-white",
@@ -61,7 +61,7 @@ export default function Article({ article, variant, color, type, className }) {
               className="object-cover w-full"
             />
           </div>
-          <div className="grid gap-0.5 p-2">
+          <div className="grid gap-0.5 p-4 py-4">
             <div className="text-base font-semibold line-clamp-2">{article.title}</div>
             {type === "sate" ? (
               <div>
@@ -73,7 +73,7 @@ export default function Article({ article, variant, color, type, className }) {
                 <span className="text-sm">{moment(article.date).format("D MMMM YYYY")}</span> &#x2022; <span className="">{article.author}</span>
               </div>
             )}
-            <p className="text-sm line-clamp-2">{article.description}</p>
+            <p className="text-sm line-clamp-3">{article.description}</p>
           </div>
         </>
       )}
