@@ -1,5 +1,5 @@
 import Article from "@/components/Article";
-import ArticleCarousel from "@/components/ArticleCarousel";
+import CustomCarousel from "@/components/CustomCarousel";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import TimelinePerkantas from "@/components/TimelinePerkantas";
@@ -299,7 +299,7 @@ export default function Home() {
         wrapperClassName={"grid gap-4 py-8"}
       >
         <h1 className="text-2xl font-semibold text-center mx-auto">Renungan Saat Teduh</h1>
-        <div className="grid gap-2">
+        <div className="grid gap-2 w-full">
           {listArticle.map((article, index) => {
             return (
               <Article
@@ -319,20 +319,18 @@ export default function Home() {
           <Button variant="ghost">Lihat Renungan lainnya</Button>
         </Link>
       </Section>
-      <Section
-        className={"py-8"}
-        wrapperClassName={"grid gap-4 px-0"}
-      >
+      <Section wrapperClassName={"p-0 px-0 pb-8"}>
         <h1 className="text-2xl font-semibold text-center mx-auto">Artikel Rohani Lainnya</h1>
-        <ArticleCarousel>
+        <CustomCarousel>
           {bigListArticle.map((article, index) => (
             <Article
+              className={"max-w-full"}
               article={article}
               color={"white"}
               key={index}
             />
           ))}
-        </ArticleCarousel>
+        </CustomCarousel>
       </Section>
       <Section
         className={"py-8"}
@@ -391,7 +389,7 @@ export default function Home() {
       </Section>
       <Section wrapperClassName={"p-0 px-0 pb-8"}>
         <h2 className="text-lg font-semibold text-mandy text-center">Kegiatan Non-Rutin PSKJ</h2>
-        <ArticleCarousel>
+        <CustomCarousel>
           {eventPSKJ.map((event) => {
             console.log(event);
             return (
@@ -414,12 +412,12 @@ export default function Home() {
               </div>
             );
           })}
-        </ArticleCarousel>
+        </CustomCarousel>
       </Section>
 
       <Section wrapperClassName={"p-0 px-0 pb-8"}>
         <h2 className="text-lg font-semibold text-mandy text-center">Sejarah PSKJ</h2>
-        <ArticleCarousel loop={false}>
+        <CustomCarousel loop={false}>
           {sejarah.map((card) => {
             return (
               <div
@@ -443,7 +441,7 @@ export default function Home() {
               </div>
             );
           })}
-        </ArticleCarousel>
+        </CustomCarousel>
       </Section>
     </main>
   );

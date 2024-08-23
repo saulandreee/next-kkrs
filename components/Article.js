@@ -5,7 +5,7 @@ import moment from "moment";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-const cardVariants = cva("shadow overflow-hidden", {
+const cardVariants = cva("shadow overflow-hidden w-full", {
   variants: {
     variant: {
       default: "rounded-xl",
