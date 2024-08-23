@@ -5,7 +5,6 @@ import Section from "@/components/Section";
 import TimelinePerkantas from "@/components/TimelinePerkantas";
 import { cn } from "@/lib/utils";
 import { faker } from "@faker-js/faker";
-import { Title } from "@radix-ui/react-dialog";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -109,7 +108,6 @@ var bigListArticle = [
     bible: "Yohanes 3 : 16",
   },
 ];
-
 var eventPSKJ = [
   {
     title: "KKR Siswa",
