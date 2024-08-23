@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
-export default function ArticleCarousel({ children }) {
+export default function ArticleCarousel({ loop = true, children }) {
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
 
@@ -48,7 +48,7 @@ export default function ArticleCarousel({ children }) {
       <Carousel
         className="w-full"
         setApi={setApi}
-        opts={{ align: "start", loop: true }}
+        opts={{ align: "start", loop: loop }}
       >
         <CarouselContent className="-ml-2 md:-ml-4 py-4">
           {children.map((item, index) => (

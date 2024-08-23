@@ -110,6 +110,92 @@ var bigListArticle = [
   },
 ];
 
+var eventPSKJ = [
+  {
+    title: "KKR Siswa",
+    description: "Kebaktian Kebangunan Rohani Siswa Jakarta",
+    image: faker.image.url({ width: 224, height: "232" }),
+  },
+  {
+    title: "KKSJ",
+    description: "Kamp Kepemimpinan Siswa Jakarta",
+    image: faker.image.url({ width: 224, height: "232" }),
+  },
+  {
+    title: "RKK",
+    description: "Retreat Kelompok Kecil",
+    image: faker.image.url({ width: 224, height: "232" }),
+  },
+  {
+    title: "BHS",
+    description: "Beyond High School",
+    image: faker.image.url({ width: 224, height: "232" }),
+  },
+  {
+    title: "KPD",
+    description: "Kebaktian Pengutusan dan Doa",
+    image: faker.image.url({ width: 224, height: "232" }),
+  },
+  {
+    title: "HDSN",
+    description: "Hari Doa Siswa Nasional",
+    image: faker.image.url({ width: 224, height: "232" }),
+  },
+];
+
+var sejarah = [
+  {
+    date: "29 Juni 1971",
+    text: "Pelayanan Mahasiswa Perkantas dirintis oleh Soen Siregar, Jonathan Parapak, David Wang, dan Jimmy Kuswandi.",
+    image: faker.image.url({ width: 240, height: 150 }),
+  },
+  {
+    date: "1984",
+    text: "Mangapul Sagala memuridkan beberapa remaja HKBP Kernolong (Sahala, siswa SMA 30, Marojahan, SMA 68, dan Daniel Tobing, SMA 1). Di tahun ini PSKJ hadir dan mulai melayani siswa dari berbagai sekolah.",
+    image: faker.image.url({ width: 240, height: 150 }),
+  },
+  {
+    date: "1985",
+    text: "Diadakan Natal Siswa se-Jakarta.",
+    image: faker.image.url({ width: 240, height: 150 }),
+  },
+  {
+    date: "1987",
+    text: "KKSJ (Kamp Kepemimpinan Siswa se-Jakarta) diadakan untuk pertama kalinya. KKSJ bertujuan meningkatkan kualitas pelayanan siswa di tiap sekolah.",
+    image: faker.image.url({ width: 240, height: 150 }),
+  },
+  {
+    date: "1988",
+    text: "PSKJ (di Jakarta Pusat) mulai didampingi oleh TPS (Tim Pembimbing Siswa).",
+    image: faker.image.url({ width: 240, height: 150 }),
+  },
+  {
+    date: "1989",
+    text: "PSKJ hadir di Jakarta Selatan.",
+    image: faker.image.url({ width: 240, height: 150 }),
+  },
+  {
+    date: "1992",
+    text: "PSKJ hadir di Jakarta Barat.",
+    image: faker.image.url({ width: 240, height: 150 }),
+  },
+  {
+    date: "1994",
+    text: "PSKJ hadir di Depok.",
+    image: faker.image.url({ width: 240, height: 150 }),
+  },
+  {
+    date: "2010",
+    text: "PSKJ hadir di Jakarta Timur 2(jalan raya Bogor dan sekitarnya)",
+    image: faker.image.url({ width: 240, height: 150 }),
+  },
+  {
+    date: "2024",
+    text: "14 sekolah terus dilayani dan 5 orang staf siswa aktif melayani serta 2 staf yang sedang melanjutkan studinya.",
+    image: faker.image.url({ width: 240, height: 150 }),
+  },
+];
+
 export default function Home() {
   return (
     <main className="">
@@ -306,63 +392,57 @@ export default function Home() {
       <Section wrapperClassName={"p-0 px-0 pb-8"}>
         <h2 className="text-lg font-semibold text-mandy text-center">Kegiatan Non-Rutin PSKJ</h2>
         <ArticleCarousel>
-          <div className="relative rounded-xl shadow aspect-[224/232] overflow-hidden">
-            <Image
-              src={"/images/landing/event-kkrs.png"}
-              alt="KKRS"
-              quality={100}
-              width={224}
-              height={232}
-              className="object-cover w-full absolute top-0"
-            />
-            <div className="absolute bottom-0 text-white px-4 pb-2.5">
-              <h3 className="font-semibold mb-1.5">KKR Siswa</h3>
-              <p>Kebaktian Kebangunan Rohani Siswa Jakarta</p>
-            </div>
-          </div>
-          <div className="relative rounded-xl shadow aspect-[224/232] overflow-hidden">
-            <Image
-              src={"/images/landing/event-kkrs.png"}
-              alt="KKRS"
-              quality={100}
-              width={224}
-              height={232}
-              className="object-cover w-full absolute top-0"
-            />
-            <div className="absolute bottom-0 text-white px-4 pb-2.5">
-              <h3 className="font-semibold mb-1.5">KKR Siswa</h3>
-              <p>Kebaktian Kebangunan Rohani Siswa Jakarta</p>
-            </div>
-          </div>
-          <div className="relative rounded-xl shadow aspect-[224/232] overflow-hidden">
-            <Image
-              src={"/images/landing/event-kkrs.png"}
-              alt="KKRS"
-              quality={100}
-              width={224}
-              height={232}
-              className="object-cover w-full absolute top-0"
-            />
-            <div className="absolute bottom-0 text-white px-4 pb-2.5">
-              <h3 className="font-semibold mb-1.5">KKR Siswa</h3>
-              <p>Kebaktian Kebangunan Rohani Siswa Jakarta</p>
-            </div>
-          </div>
-          <div className="relative rounded-xl shadow aspect-[224/232] overflow-hidden">
-            <div className="relative">
-              <Image
-                src={"/images/landing/event-kkrs.png"}
-                alt="KKRS"
-                quality={100}
-                fill
-                className="object-cover h-full absolute top-0"
-              />
-            </div>
-            <div className="absolute bottom-0 t1.5xt-white px-4 z-[1]">
-              <h3 className="font-semibold mb-4">KKR Siswa</h3>
-              <p className="text-sm">Kebaktian Kebangunan Rohani Siswa Jakarta</p>
-            </div>
-          </div>
+          {eventPSKJ.map((event) => {
+            console.log(event);
+            return (
+              <div
+                className="relative rounded-xl shadow aspect-[224/232] overflow-hidden"
+                key={event.title}
+              >
+                <Image
+                  src={event.image}
+                  alt={event.title}
+                  quality={100}
+                  width={224}
+                  height={232}
+                  className="object-cover w-full absolute top-0"
+                />
+                <div className="absolute bottom-0 text-white px-4 pb-2.5">
+                  <h3 className="font-semibold mb-1.5">{event.title}</h3>
+                  <p>{event.description}</p>
+                </div>
+              </div>
+            );
+          })}
+        </ArticleCarousel>
+      </Section>
+
+      <Section wrapperClassName={"p-0 px-0 pb-8"}>
+        <h2 className="text-lg font-semibold text-mandy text-center">Sejarah PSKJ</h2>
+        <ArticleCarousel loop={false}>
+          {sejarah.map((card) => {
+            return (
+              <div
+                className="rounded-xl bg-white shadow"
+                key={card.text}
+              >
+                <div className="!aspect-[240/150] rounded-t-xl overflow-hidden">
+                  <Image
+                    src={card.image}
+                    alt={card.text}
+                    quality={100}
+                    width={240}
+                    height={150}
+                    className="object-cover w-full"
+                  />
+                </div>
+                <div className="grid gap-0.5 p-4 py-4">
+                  <h3 className="font-semibold">{card.date}</h3>
+                  <p className="text-sm">{card.text}</p>
+                </div>
+              </div>
+            );
+          })}
         </ArticleCarousel>
       </Section>
     </main>
