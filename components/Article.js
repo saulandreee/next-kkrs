@@ -9,7 +9,7 @@ const cardVariants = cva("shadow overflow-hidden w-full", {
   variants: {
     variant: {
       default: "rounded-xl",
-      list: "rounded-xl flex gap-2 p-2",
+      list: "rounded-xl flex gap-2 p-2 lg:gap-6 lg:p-4 rounded-2xl",
       main: "rounded-2xl p-4 h-fit",
     },
     color: {
@@ -27,28 +27,29 @@ export default function Article({ article, variant, color, type, className }) {
     <div className={cn(cardVariants({ variant, color, className }))}>
       {variant === "list" ? (
         <>
-          <Image
-            src={article.image}
-            alt={article.title}
-            quality={100}
-            width={96}
-            height={72}
-            className="rounded-lg grow-0 shrink-0 h-fit"
-          />
-          <div className="grid gap-0.5">
-            <div className="text-base font-semibold line-clamp-2">{article.title}</div>
+          <div className="relative aspect-[96/72] w-[96px] grow-0 shrink-0 h-fit lg:aspect-[232/160] lg:w-[232px] ">
+            <Image
+              src={article.image}
+              alt={article.title}
+              quality={100}
+              fill
+              className="rounded-lg w-full object-cover lg:rounded-xl"
+            />
+          </div>
+          <div className="grid gap-0.5 h-fit">
+            <div className="text-base font-semibold line-clamp-2 lg:text-2xl">{article.title}</div>
             {type === "sate" ? (
-              <div className="text-sm">
+              <div className="text-sm lg:text-base">
                 <span className="">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
                 <span className="text-mandy">{article.bible}</span>
               </div>
             ) : (
-              <div className="text-sm">
+              <div className="text-sm lg:text-base">
                 <span>{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
                 <span className="">{article.author}</span>
               </div>
             )}
-            <p className="text-sm line-clamp-3">{article.description}</p>
+            <p className="text-sm line-clamp-3 lg:text-base">{article.description}</p>
           </div>
         </>
       ) : variant === "main" ? (

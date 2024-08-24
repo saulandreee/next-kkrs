@@ -62,23 +62,26 @@ export default function ArticleListPage({ searchParams }) {
   return (
     <>
       <Section
-        className={"py-6 relative z-[1]"}
+        className={"py-6 relative z-[1] lg:py-10"}
         wrapperClassName={"grid gap-6 px-4"}
       >
-        <h1 className="text-xl text-center font-semibold">Renungan Saat Teduh</h1>
-        <div className="px-8">
-          <Input
-            placeholder="Cari Renungan"
-            icon={<Search />}
-            // value={""}
-          />
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center lg:mb-4">
+          <h1 className="text-xl text-center font-semibold lg:text-3xl">Renungan Saat Teduh</h1>
+          <div className="px-8 lg:px-0 lg:w-[300px]">
+            <Input
+              placeholder="Cari Renungan"
+              icon={<Search />}
+
+              // value={""}
+            />
+          </div>
         </div>
         <div className="grid gap-2.5">
           {listArticle.map((article) => {
             return (
               <Article
-                type={"sate"}
                 variant={"list"}
+                type={"sate"}
                 article={article}
                 key={article.date}
               />
