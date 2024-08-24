@@ -39,6 +39,7 @@ export default function Article({ article, variant, color, type, forceSize, clas
               quality={100}
               fill
               className="rounded-lg w-full object-cover lg:rounded-xl"
+              sizes="(min-width: 300px) 96px, (min-width: 768px) 160px, (min-width: 1080px) 232px, 232px"
             />
           </div>
           <div className="grid gap-0.5 h-fit">
@@ -68,6 +69,7 @@ export default function Article({ article, variant, color, type, forceSize, clas
               quality={100}
               fill
               className="object-cover w-full rounded-xl"
+              sizes="(min-width: 1080px) 512px, 512px"
             />
           </div>
           <div className="text-2xl font-semibold line-clamp-2">{article.title}</div>
@@ -95,6 +97,7 @@ export default function Article({ article, variant, color, type, forceSize, clas
               width={240}
               height={150}
               className="object-cover w-full"
+              sizes="(min-width: 300px) 240px, (min-width: 768px) 300px, 300px"
             />
           </div>
           <div className="grid gap-0.5 p-4 py-4">

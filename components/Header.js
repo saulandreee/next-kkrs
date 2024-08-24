@@ -1,4 +1,5 @@
-// "use client";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -29,15 +30,15 @@ export default function Header() {
         <div className="flex gap-2.5">
           <div className="hidden lg:flex lg:items-center lg:gap-2.5">
             <Link href={"/"}>
-              <Button variant="ghost">Beranda</Button>
+              <Button variant={"ghost"}>Beranda</Button>
             </Link>
 
             <Link href={"/artikel"}>
-              <Button variant="ghost">Artikel</Button>
+              <Button variant={"ghost"}>Artikel</Button>
             </Link>
 
             <Link href={"/#about-pskj"}>
-              <Button variant="ghost">Tentang PSKJ</Button>
+              <Button variant={"ghost"}>Tentang PSKJ</Button>
             </Link>
           </div>
           <Link

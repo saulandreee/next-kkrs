@@ -195,10 +195,28 @@ var sejarah = [
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="relative overflow-hidden">
+      <div className="absolute top-[420px] w-full aspect-[368/3368] md:hidden">
+        <Image
+          src={"/images/landing/bg-landing.svg"}
+          alt="bg-landing"
+          fill
+          className="w-full object-cover"
+          priority
+          loading="eager"
+        />
+      </div>
+      <div className="absolute top-[380px] max-w-none w-[135%] aspect-[1912/3502] hidden left-1/2 -translate-x-1/2 md:inline-block">
+        <Image
+          src={"/images/landing/bg-landing-desktop.svg"}
+          alt="bg-landing"
+          fill
+          className="w-full object-cover"
+        />
+      </div>
       <Section
         className={"py-12"}
-        wrapperClassName={"flex relative px-4 justify-between items-center"}
+        wrapperClassName={"flex relative px-4 justify-between md:items-center"}
       >
         <div className="min-w-[200px] max-w-[300px] md:max-w-[440px] lg:max-w-none">
           <div className="grid gap-1 mb-4 md:gap-2 lg:gap-4">
@@ -211,97 +229,92 @@ export default function Home() {
             bahwa hanya Kristus yang mampu memberikan hidup yang penuh makna dan keselamatan yang kekal.
           </p>
         </div>
-        <div className="shrink-0 grow-0 relative top-4 aspect-square w-[120px] md:w-[240px] lg:w-[320px]">
+        <div className="shrink-0 grow-0 relative top-4 h-fit aspect-square w-[120px] md:w-[240px] md:top-0 lg:w-[320px]">
           <Image
             src="/logo-nocross-lg.png"
             quality={100}
             fill
-            sizes="(min-width: 800px) 400px, (min-width: 1200px) 600px, 600px"
+            sizes="(min-width: 300px) 120px,(min-width: 800px) 240px, (min-width: 1200px) 600px, 600px"
             alt="logo"
             priority={true}
             loading="eager"
           />
         </div>
       </Section>
-      <Section className={cn("relative min-h-[468px]")}>
-        <div className="relative z-[1] grid gap-4 py-16 lg:gap-6">
-          <h1 className="text-2xl text-center font-semibold max-w-[300px] mx-auto md:max-w-none lg:text-3xl">Yuk Mulai Hari dengan Saat Teduh!</h1>
+      <Section className={cn("relative min-h-[468px] overflow-y-hidden")}>
+        <div className="relative z-[1] grid gap-4 py-16 pb-4 lg:gap-6">
+          <h1 className="text-xl text-center font-semibold max-w-[300px] mx-auto md:max-w-none md:text-2xl lg:text-3xl">
+            Yuk Mulai Hari dengan Saat Teduh!
+          </h1>
           <div className="grid gap-4 grid-cols-2 md:mx-auto md:gap-6 lg:grid-cols-4 lg:w-fit lg:gap-8">
-            <div className="flex-1 min-w-40 max-w-48 md:max-w-52 lg:max-w-56">
-              <div className="relative w-40 md:w-44 lg:w-48 aspect-square mx-auto">
-                <Image
-                  src="/images/landing/sate-list-1.svg"
-                  alt="sate-list-1"
-                  quality={100}
-                  fill
-                  sizes="(min-width: 600px) 200px, (min-width: 1024px) 240px"
-                  className="w-full object-cover"
-                />
-              </div>
-              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
-                <p>Sediakan waktu yang tepat</p>
-              </div>
-            </div>
-            <div className="flex-1 min-w-40 max-w-48 md:max-w-52 lg:max-w-56">
-              <div className="relative w-40 md:w-44 lg:w-48 aspect-square mx-auto">
-                <Image
-                  src="/images/landing/sate-list-2.svg"
-                  alt="sate-list-1"
-                  quality={100}
-                  fill
-                  sizes="(min-width: 600px) 200px, (min-width: 1024px) 240px"
-                  className="w-full object-cover"
-                />
-              </div>
-              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
-                <p>Berdoalah dan mohon pimpinan Tuhan</p>
+            <div className="flex-1">
+              <Image
+                src="/images/landing/sate-list-1.svg"
+                alt="sate-list-1"
+                quality={100}
+                width={120}
+                height={120}
+                sizes="(min-width: 600px) 140px, (min-width: 1024px) 160px"
+                className="w-30 mx-auto md:w-32 lg:w-36"
+              />
+
+              <div className="rounded-full text-sm lg:text-lg bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
+                <p className="">Sediakan waktu yang tepat</p>
               </div>
             </div>
-            <div className="flex-1 min-w-40 max-w-48 md:max-w-52 lg:max-w-56">
-              <div className="relative w-40 md:w-44 lg:w-48 aspect-square mx-auto">
-                <Image
-                  src="/images/landing/sate-list-3.svg"
-                  alt="sate-list-1"
-                  quality={100}
-                  fill
-                  sizes="(min-width: 600px) 200px, (min-width: 1024px) 240px"
-                  className="w-full object-cover"
-                />
-              </div>
-              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
-                <p>Baca dan renungkan Firman Tuhan</p>
+            <div className="flex-1">
+              <Image
+                src="/images/landing/sate-list-2.svg"
+                alt="sate-list-1"
+                quality={100}
+                width={120}
+                height={120}
+                sizes="(min-width: 600px) 140px, (min-width: 1024px) 160px"
+                className="w-30 mx-auto md:w-32 lg:w-36"
+              />
+
+              <div className="rounded-full text-sm lg:text-lg bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
+                <p className="">Berdoalah dan mohon pimpinan Tuhan</p>
               </div>
             </div>
-            <div className="flex-1 min-w-40 max-w-48 md:max-w-52 lg:max-w-56">
-              <div className="relative w-40 md:w-44 lg:w-48 aspect-square mx-auto">
-                <Image
-                  src="/images/landing/sate-list-4.svg"
-                  alt="sate-list-1"
-                  quality={100}
-                  fill
-                  sizes="(min-width: 600px) 200px, (min-width: 1024px) 240px"
-                  className="w-full object-cover"
-                />
+            <div className="flex-1">
+              <Image
+                src="/images/landing/sate-list-3.svg"
+                alt="sate-list-1"
+                quality={100}
+                width={120}
+                height={120}
+                sizes="(min-width: 600px) 140px, (min-width: 1024px) 160px"
+                className="w-30 mx-auto md:w-32 lg:w-36"
+              />
+
+              <div className="rounded-full text-sm lg:text-lg bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
+                <p className="">Baca dan renungkan Firman Tuhan</p>
               </div>
-              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
-                <p>Tutup kembali dengan doa</p>
+            </div>
+            <div className="flex-1">
+              <Image
+                src="/images/landing/sate-list-4.svg"
+                alt="sate-list-1"
+                quality={100}
+                width={120}
+                height={120}
+                sizes="(min-width: 600px) 140px, (min-width: 1024px) 160px"
+                className="w-30 mx-auto md:w-32 lg:w-36"
+              />
+
+              <div className="rounded-full text-sm lg:text-lg bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
+                <p className="">Tutup kembali dengan doa</p>
               </div>
             </div>
           </div>
         </div>
-        <Image
-          src="/images/landing/sate-bg.svg"
-          alt="sate-bg"
-          fill
-          quality={100}
-          className="object-cover w-full absolute !top-0"
-        />
       </Section>
       <Section
         className=""
         wrapperClassName={"grid gap-4 py-8 lg:gap-8"}
       >
-        <h1 className="text-2xl font-semibold text-center mx-auto lg:text-3xl">Renungan Saat Teduh</h1>
+        <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl">Renungan Saat Teduh</h1>
         <div className="grid gap-2 w-full lg:grid-cols-2 lg:gap-6">
           <Article
             article={listArticle[0]}
@@ -353,7 +366,7 @@ export default function Home() {
         </Link>
       </Section>
       <Section wrapperClassName={"p-0 px-0 pb-8"}>
-        <h1 className="text-2xl font-semibold text-center mx-auto lg:text-3xl lg:mb-6">Artikel Rohani Lainnya</h1>
+        <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl lg:mb-6">Artikel Rohani Lainnya</h1>
         <CustomCarousel>
           {bigListArticle.map((article, index) => (
             <Article
@@ -370,7 +383,7 @@ export default function Home() {
         wrapperClassName={"px-3 grid gap-6 lg:gap-8"}
         id="about-pskj"
       >
-        <h1 className="text-2xl font-semibold lg:text-3xl">Yuk Kenalan Sama Persekutuan Siswa Kristen Jakarta (PSKJ)! </h1>
+        <h1 className="text-xl font-semibold md:text-2xl lg:text-3xl">Yuk Kenalan Sama Persekutuan Siswa Kristen Jakarta (PSKJ)! </h1>
         <p className="text-sm md:text-base">
           Remaja merupakan masa mencari identitas diri. Maka dari itu, pelayanan siswa Perkantas berfokus pada penginjilan dan pemuridan kepada siswa,
           sehingga siswa dapat mempertuhankan Kristus dalam setiap aspek hidupnya, serta menangkap identitasnya sebagai yang murid Kristus, menjadi
