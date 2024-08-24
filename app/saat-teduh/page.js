@@ -77,7 +77,7 @@ export default function ArticleListPage({ searchParams }) {
           {listArticle.map((article) => {
             return (
               <Article
-                type={"saat-teduh"}
+                type={"sate"}
                 variant={"list"}
                 article={article}
                 key={article.date}

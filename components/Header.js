@@ -24,12 +24,14 @@ export default function Header() {
           />
           <span className="text-mandy-500 text-sm font-extrabold">KKRS 2024</span>
         </Link>
-        <Button
-          className=""
-          size="sm"
-        >
-          Saat Teduh Yuk!
-        </Button>
+        <Link href={"/saat-teduh"}>
+          <Button
+            className=""
+            size="sm"
+          >
+            Saat Teduh Yuk!
+          </Button>
+        </Link>
       </nav>
     </header>
   );

@@ -30,20 +30,20 @@ export default function Article({ article, variant, color, type, className }) {
             src={article.image}
             alt={article.title}
             quality={100}
-            width={80}
-            height={64}
+            width={96}
+            height={72}
             className="rounded-lg grow-0 shrink-0 h-fit"
           />
           <div className="grid gap-0.5">
             <div className="text-base font-semibold line-clamp-2">{article.title}</div>
             {type === "sate" ? (
-              <div>
-                <span className="text-sm">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
+              <div className="text-sm">
+                <span className="">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
                 <span className="text-mandy">{article.bible}</span>
               </div>
             ) : (
-              <div>
-                <span className="text-sm">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
+              <div className="text-sm">
+                <span>{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
                 <span className="">{article.author}</span>
               </div>
             )}
