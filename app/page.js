@@ -198,88 +198,86 @@ export default function Home() {
   return (
     <main className="">
       <Section
-        className={"pt-16 pb-8"}
-        wrapperClassName={"flex relative px-4 justify-between"}
+        className={"py-12"}
+        wrapperClassName={"flex relative px-4 justify-between items-center"}
       >
-        <div className="min-w-[200px] max-w-[300px]">
+        <div className="min-w-[200px] max-w-[300px] lg:max-w-none">
           <div className="grid gap-1 mb-4">
-            <h2 className="text-base font-semibold">KKR SISWA 2024</h2>
-            <h1 className="text-3xl font-bold text-mandy-500">The Greatest Love Story</h1>
-            <h3 className="text-base font-semibold">For God so LOVED YOU that He gave HIS ONLY SON</h3>
+            <h2 className="text-base font-semibold lg:text-2xl">KKR SISWA 2024</h2>
+            <h1 className="text-3xl font-bold text-mandy-500 lg:text-4xl">The Greatest Love Story</h1>
+            <h3 className="text-base font-semibold lg:text-xl">For God so LOVED YOU that He gave HIS ONLY SON</h3>
           </div>
-          <p className="text-sm">
+          <p className="text-sm lg:text-base">
             Mari kembali menghayati bahwa kita semua adalah bagian dari kisah kasih Allah yang begitu besar dalam dunia, serta senantiasa mengingat
             bahwa hanya Kristus yang mampu memberikan hidup yang penuh makna dan keselamatan yang kekal.
           </p>
         </div>
-        <div className="shrink-0 grow-0 relative top-4">
+        <div className="shrink-0 grow-0 relative top-4 aspect-square w-[120px] md:w-[240px] lg:w-[320px]">
           <Image
             src="/logo-nocross-lg.png"
             quality={100}
-            width={120}
-            height={120}
+            fill
+            sizes="(min-width: 800px) 400px, (min-width: 1200px) 600px, 600px"
             alt="logo"
+            priority={true}
+            loading="eager"
           />
         </div>
       </Section>
       <Section className={cn("relative min-h-[468px]")}>
-        <div className="relative z-[1] grid gap-4 py-16">
-          <h1 className="text-2xl text-center font-semibold max-w-[300px] mx-auto">Yuk Mulai Hari dengan Saat Teduh!</h1>
-          <div className="grid gap-4">
-            <div className="flex justify-center gap-4">
-              <div className="flex-1 min-w-40 max-w-48">
-                <Image
-                  src="/images/landing/sate-list-1.svg"
-                  alt="sate-list-1"
-                  quality={100}
-                  width={120}
-                  height={120}
-                  className="mx-auto"
-                />
-                <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
-                  <p>Sediakan waktu yang tepat</p>
-                </div>
-              </div>
-              <div className="flex-1 min-w-40 max-w-48">
-                <Image
-                  src="/images/landing/sate-list-2.svg"
-                  alt="sate-list-1"
-                  quality={100}
-                  width={120}
-                  height={120}
-                  className="mx-auto"
-                />
-                <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
-                  <p>Berdoalah dan mohon pimpinan Tuhan</p>
-                </div>
+        <div className="relative z-[1] grid gap-4 py-16 lg:gap-6">
+          <h1 className="text-2xl text-center font-semibold max-w-[300px] mx-auto lg:text-3xl lg:max-w-none">Yuk Mulai Hari dengan Saat Teduh!</h1>
+          <div className="grid gap-4 grid-cols-2 lg:grid-cols-4 lg:w-fit lg:mx-auto lg:gap-8">
+            <div className="flex-1 min-w-40 max-w-48">
+              <Image
+                src="/images/landing/sate-list-1.svg"
+                alt="sate-list-1"
+                quality={100}
+                width={120}
+                height={120}
+                className="mx-auto"
+              />
+              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
+                <p>Sediakan waktu yang tepat</p>
               </div>
             </div>
-            <div className="flex justify-center gap-4">
-              <div className="flex-1 min-w-40 max-w-48">
-                <Image
-                  src="/images/landing/sate-list-3.svg"
-                  alt="sate-list-1"
-                  quality={100}
-                  width={120}
-                  height={120}
-                  className="mx-auto"
-                />
-                <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
-                  <p>Baca dan renungkan Firman Tuhan</p>
-                </div>
+            <div className="flex-1 min-w-40 max-w-48">
+              <Image
+                src="/images/landing/sate-list-2.svg"
+                alt="sate-list-1"
+                quality={100}
+                width={120}
+                height={120}
+                className="mx-auto"
+              />
+              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
+                <p>Berdoalah dan mohon pimpinan Tuhan</p>
               </div>
-              <div className="flex-1 min-w-40 max-w-48">
-                <Image
-                  src="/images/landing/sate-list-4.svg"
-                  alt="sate-list-1"
-                  quality={100}
-                  width={120}
-                  height={120}
-                  className="mx-auto"
-                />
-                <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
-                  <p>Tutup kembali dengan doa</p>
-                </div>
+            </div>
+            <div className="flex-1 min-w-40 max-w-48">
+              <Image
+                src="/images/landing/sate-list-3.svg"
+                alt="sate-list-1"
+                quality={100}
+                width={120}
+                height={120}
+                className="mx-auto"
+              />
+              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
+                <p>Baca dan renungkan Firman Tuhan</p>
+              </div>
+            </div>
+            <div className="flex-1 min-w-40 max-w-48">
+              <Image
+                src="/images/landing/sate-list-4.svg"
+                alt="sate-list-1"
+                quality={100}
+                width={120}
+                height={120}
+                className="mx-auto"
+              />
+              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
+                <p>Tutup kembali dengan doa</p>
               </div>
             </div>
           </div>
@@ -294,21 +292,37 @@ export default function Home() {
       </Section>
       <Section
         className=""
-        wrapperClassName={"grid gap-4 py-8"}
+        wrapperClassName={"grid gap-4 py-8 lg:gap-8"}
       >
-        <h1 className="text-2xl font-semibold text-center mx-auto">Renungan Saat Teduh</h1>
-        <div className="grid gap-2 w-full">
-          {listArticle.map((article, index) => {
-            return (
-              <Article
-                key={index}
-                article={article}
-                variant={"list"}
-                type={"sate"}
-                color={index === 0 ? "white" : "pourri"}
-              />
-            );
-          })}
+        <h1 className="text-2xl font-semibold text-center mx-auto lg:text-3xl">Renungan Saat Teduh</h1>
+        <div className="grid gap-2 w-full lg:grid-cols-2 lg:gap-6">
+          <Article
+            article={listArticle[0]}
+            variant={"list"}
+            type={"sate"}
+            color={"white"}
+            className={"lg:hidden"}
+          />
+          <Article
+            article={listArticle[0]}
+            variant={"main"}
+            type={"sate"}
+            color={"white"}
+            className={"hidden lg:block"}
+          />
+          <div className="grid gap-2 w-full">
+            {listArticle.slice(1).map((article, index) => {
+              return (
+                <Article
+                  key={index}
+                  article={article}
+                  variant={"list"}
+                  type={"sate"}
+                  color={"pourri"}
+                />
+              );
+            })}
+          </div>
         </div>
         <Link
           href={"/"}
@@ -318,7 +332,7 @@ export default function Home() {
         </Link>
       </Section>
       <Section wrapperClassName={"p-0 px-0 pb-8"}>
-        <h1 className="text-2xl font-semibold text-center mx-auto">Artikel Rohani Lainnya</h1>
+        <h1 className="text-2xl font-semibold text-center mx-auto lg:text-3xl lg:mb-6">Artikel Rohani Lainnya</h1>
         <CustomCarousel>
           {bigListArticle.map((article, index) => (
             <Article
@@ -332,68 +346,94 @@ export default function Home() {
       </Section>
       <Section
         className={"py-8 scroll-mt-8 lg:scroll-mt-16 "}
-        wrapperClassName={"px-3 grid gap-6"}
+        wrapperClassName={"px-3 grid gap-6 lg:gap-8"}
         id="about-pskj"
       >
-        <h1 className="text-2xl font-semibold">Yuk Kenalan Sama Persekutuan Siswa Kristen Jakarta (PSKJ)! </h1>
-        <p className="text-sm">
+        <h1 className="text-2xl font-semibold lg:text-3xl">Yuk Kenalan Sama Persekutuan Siswa Kristen Jakarta (PSKJ)! </h1>
+        <p className="text-sm lg:text-base">
           Remaja merupakan masa mencari identitas diri. Maka dari itu, pelayanan siswa Perkantas berfokus pada penginjilan dan pemuridan kepada siswa,
           sehingga siswa dapat mempertuhankan Kristus dalam setiap aspek hidupnya, serta menangkap identitasnya sebagai yang murid Kristus, menjadi
           garam dan terang bagi lingkungan sekitar, gereja, bangsa, dan dunia.
         </p>
-        <h2 className="text-lg font-semibold text-mandy text-center">Kegiatan Rutin PSKJ</h2>
-        <div className="">
+        <h2 className="text-lg font-semibold text-mandy text-center lg:text-2xl">Kegiatan Rutin PSKJ</h2>
+        <div className="grid gap-2 lg:grid-cols-3 lg:mb-6">
           <div className="grid gap-1 p-4 text-center">
-            <Image
-              src={"/images/landing/event-1.svg"}
-              alt="Student Fellowship"
-              quality={100}
-              width={120}
-              height={120}
-              className="mx-auto"
-            />
-            <h3 className="font-semibold">Student Fellowship</h3>
-            <p className="text-sm">
+            <div className="relative aspect-square w-[120px] lg:w-[144px] mx-auto">
+              <Image
+                src={"/images/landing/event-1.svg"}
+                alt="Student Fellowship"
+                quality={100}
+                fill
+              />
+            </div>
+            <h3 className="font-semibold lg:text-xl">Student Fellowship</h3>
+            <p className="text-sm lg:text-base">
               Diadakan di wilayah masing-masing setiap bulan (minggu ke 1 dan 3), dengan tujuan membina siswa khususnya pengurus Rohkris dalam
               melayani.
             </p>
           </div>
           <div className="grid gap-1 p-4 text-center">
-            <Image
-              src={"/images/landing/event-2.svg"}
-              alt="Kelompok Kecil"
-              quality={100}
-              width={120}
-              height={120}
-              className="mx-auto"
-            />
-            <h3 className="font-semibold">Kelompok Kecil</h3>
-            <p className="text-sm">
+            <div className="relative aspect-square w-[120px] lg:w-[144px] mx-auto">
+              <Image
+                src={"/images/landing/event-2.svg"}
+                alt="Kelompok Kecil"
+                quality={100}
+                fill
+              />
+            </div>
+            <h3 className="font-semibold lg:text-xl">Kelompok Kecil</h3>
+            <p className="text-sm lg:text-base">
               Terdiri dari pengurus atau siswa yang aktif dalam kegiatan Rohkris dan dipimpin oleh TPS (Tim Pembimbing siswa) serta Staf Siswa..
             </p>
           </div>
           <div className="grid gap-1 p-4 text-center">
-            <Image
-              src={"/images/landing/event-1.svg"}
-              alt="Student Fellowship"
-              quality={100}
-              width={120}
-              height={120}
-              className="mx-auto"
-            />
-            <h3 className="font-semibold">Visitasi Sekolah</h3>
-            <p className="text-sm">Pendampingan dan kunjungan Rohkris yang dikerjakan oleh TPS.</p>
+            <div className="relative aspect-square w-[120px] lg:w-[144px] mx-auto">
+              <Image
+                src={"/images/landing/event-1.svg"}
+                alt="Student Fellowship"
+                quality={100}
+                fill
+              />
+            </div>
+            <h3 className="font-semibold lg:text-xl">Visitasi Sekolah</h3>
+            <p className="text-sm lg:text-base">Pendampingan dan kunjungan Rohkris yang dikerjakan oleh TPS.</p>
           </div>
         </div>
       </Section>
-      <Section wrapperClassName={"p-0 px-0 pb-8"}>
-        <h2 className="text-lg font-semibold text-mandy text-center">Kegiatan Non-Rutin PSKJ</h2>
-        <CustomCarousel>
+      <Section wrapperClassName={"p-0 px-0 pb-8 lg:mb-6"}>
+        <h2 className="text-lg font-semibold text-mandy text-center lg:text-2xl lg:mb-8">Kegiatan Non-Rutin PSKJ</h2>
+        <div className="lg:hidden">
+          <CustomCarousel>
+            {eventPSKJ.map((event) => {
+              console.log(event);
+              return (
+                <div
+                  className="relative rounded-xl shadow aspect-[224/232] overflow-hidden"
+                  key={event.title}
+                >
+                  <Image
+                    src={event.image}
+                    alt={event.title}
+                    quality={100}
+                    width={224}
+                    height={232}
+                    className="object-cover w-full absolute top-0"
+                  />
+                  <div className="absolute bottom-0 text-white px-4 pb-2.5">
+                    <h3 className="font-semibold mb-1.5">{event.title}</h3>
+                    <p>{event.description}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </CustomCarousel>
+        </div>
+        <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6">
           {eventPSKJ.map((event) => {
             console.log(event);
             return (
               <div
-                className="relative rounded-xl shadow aspect-[224/232] overflow-hidden"
+                className="relative rounded-xl shadow aspect-[360/232] overflow-hidden"
                 key={event.title}
               >
                 <Image
@@ -405,19 +445,19 @@ export default function Home() {
                   className="object-cover w-full absolute top-0"
                 />
                 <div className="absolute bottom-0 text-white px-4 pb-2.5">
-                  <h3 className="font-semibold mb-1.5">{event.title}</h3>
-                  <p>{event.description}</p>
+                  <h3 className="font-semibold mb-1.5 text-xl">{event.title}</h3>
+                  <p className="text-lg h-10 leading-[120%]">{event.description}</p>
                 </div>
               </div>
             );
           })}
-        </CustomCarousel>
+        </div>
       </Section>
 
       <Section wrapperClassName={"p-0 px-0 pb-8"}>
-        <h2 className="text-lg font-semibold text-mandy text-center">Sejarah PSKJ</h2>
-        <CustomCarousel loop={false}>
-          {sejarah.map((card) => {
+        <h2 className="text-lg font-semibold text-mandy text-center lg:text-2xl lg:mb-6">Sejarah PSKJ</h2>
+        <CustomCarousel>
+          {sejarah.map((card, index) => {
             return (
               <div
                 className="rounded-xl bg-white shadow"
@@ -434,8 +474,8 @@ export default function Home() {
                   />
                 </div>
                 <div className="grid gap-0.5 p-4 py-4">
-                  <h3 className="font-semibold">{card.date}</h3>
-                  <p className="text-sm">{card.text}</p>
+                  <h3 className="font-semibold lg:text-lg">{card.date}</h3>
+                  <p className="text-sm lg:text-base">{card.text}</p>
                 </div>
               </div>
             );

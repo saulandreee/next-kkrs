@@ -46,7 +46,7 @@ export default function CustomCarousel({ loop = true, children }) {
           {children.map((item, index) => (
             <CarouselItem
               key={index}
-              className="pl-2 md:pl-4 w-4/5 basis-4/5 md:basis-4/5"
+              className="pl-2 md:pl-4 w-4/5 basis-4/5 md:basis-4/5 lg:basis-1/4"
             >
               {item}
             </CarouselItem>

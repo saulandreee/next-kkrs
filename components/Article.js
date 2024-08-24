@@ -10,6 +10,7 @@ const cardVariants = cva("shadow overflow-hidden w-full", {
     variant: {
       default: "rounded-xl",
       list: "rounded-xl flex gap-2 p-2",
+      main: "rounded-2xl p-4 h-fit",
     },
     color: {
       white: "bg-white",
@@ -49,6 +50,32 @@ export default function Article({ article, variant, color, type, className }) {
             )}
             <p className="text-sm line-clamp-3">{article.description}</p>
           </div>
+        </>
+      ) : variant === "main" ? (
+        <>
+          <div className="relative aspect-[512/300] w-full mb-4">
+            <Image
+              src={article.image}
+              alt={article.title}
+              quality={100}
+              fill
+              className="object-cover w-full rounded-xl"
+            />
+          </div>
+          <div className="text-2xl font-semibold line-clamp-2">{article.title}</div>
+          {type === "sate" ? (
+            <div className="text-base">
+              <span className="">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
+              <span className="text-mandy">{article.bible}</span>&nbsp;-&nbsp;
+              <p className="line-clamp-3 inline">{article.description}</p>
+            </div>
+          ) : (
+            <div>
+              <span className="">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
+              <span className="">{article.author}</span>&nbsp;-&nbsp;
+              <p className="line-clamp-3 inline">{article.description}</p>
+            </div>
+          )}
         </>
       ) : (
         <>
