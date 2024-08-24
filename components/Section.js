@@ -7,7 +7,7 @@ export default function Section({ className, wrapperClassName, children, ...prop
       className={cn("w-full lg:px-4", className)}
       {...props}
     >
-      <div className={cn("w-full max-w-full lg:max-w-[1280px] px-2 mx-auto", wrapperClassName)}>{children}</div>
+      <div className={cn("w-full max-w-full lg:max-w-[1280px] px-2 md:px-4 lg:px-6 mx-auto", wrapperClassName)}>{children}</div>
     </section>
   );
 }

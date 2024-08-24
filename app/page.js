@@ -201,13 +201,13 @@ export default function Home() {
         className={"py-12"}
         wrapperClassName={"flex relative px-4 justify-between items-center"}
       >
-        <div className="min-w-[200px] max-w-[300px] lg:max-w-none">
-          <div className="grid gap-1 mb-4">
-            <h2 className="text-base font-semibold lg:text-2xl">KKR SISWA 2024</h2>
-            <h1 className="text-3xl font-bold text-mandy-500 lg:text-4xl">The Greatest Love Story</h1>
-            <h3 className="text-base font-semibold lg:text-xl">For God so LOVED YOU that He gave HIS ONLY SON</h3>
+        <div className="min-w-[200px] max-w-[300px] md:max-w-[440px] lg:max-w-none">
+          <div className="grid gap-1 mb-4 md:gap-2 lg:gap-4">
+            <h2 className="text-base font-semibold md:text-xl lg:text-3xl">KKR SISWA 2024</h2>
+            <h1 className="text-3xl font-bold text-mandy-500 md:text-4xl lg:text-5xl">The Greatest Love Story</h1>
+            <h3 className="text-base font-semibold md:text-lg lg:text-2xl">For God so LOVED YOU that He gave HIS ONLY SON</h3>
           </div>
-          <p className="text-sm lg:text-base">
+          <p className="text-sm md:text-base lg:text-lg">
             Mari kembali menghayati bahwa kita semua adalah bagian dari kisah kasih Allah yang begitu besar dalam dunia, serta senantiasa mengingat
             bahwa hanya Kristus yang mampu memberikan hidup yang penuh makna dan keselamatan yang kekal.
           </p>
@@ -226,57 +226,65 @@ export default function Home() {
       </Section>
       <Section className={cn("relative min-h-[468px]")}>
         <div className="relative z-[1] grid gap-4 py-16 lg:gap-6">
-          <h1 className="text-2xl text-center font-semibold max-w-[300px] mx-auto lg:text-3xl lg:max-w-none">Yuk Mulai Hari dengan Saat Teduh!</h1>
-          <div className="grid gap-4 grid-cols-2 lg:grid-cols-4 lg:w-fit lg:mx-auto lg:gap-8">
-            <div className="flex-1 min-w-40 max-w-48">
-              <Image
-                src="/images/landing/sate-list-1.svg"
-                alt="sate-list-1"
-                quality={100}
-                width={120}
-                height={120}
-                className="mx-auto"
-              />
-              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
+          <h1 className="text-2xl text-center font-semibold max-w-[300px] mx-auto md:max-w-none lg:text-3xl">Yuk Mulai Hari dengan Saat Teduh!</h1>
+          <div className="grid gap-4 grid-cols-2 md:mx-auto md:gap-6 lg:grid-cols-4 lg:w-fit lg:gap-8">
+            <div className="flex-1 min-w-40 max-w-48 md:max-w-52 lg:max-w-56">
+              <div className="relative w-40 md:w-44 lg:w-48 aspect-square mx-auto">
+                <Image
+                  src="/images/landing/sate-list-1.svg"
+                  alt="sate-list-1"
+                  quality={100}
+                  fill
+                  sizes="(min-width: 600px) 200px, (min-width: 1024px) 240px"
+                  className="w-full object-cover"
+                />
+              </div>
+              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
                 <p>Sediakan waktu yang tepat</p>
               </div>
             </div>
-            <div className="flex-1 min-w-40 max-w-48">
-              <Image
-                src="/images/landing/sate-list-2.svg"
-                alt="sate-list-1"
-                quality={100}
-                width={120}
-                height={120}
-                className="mx-auto"
-              />
-              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
+            <div className="flex-1 min-w-40 max-w-48 md:max-w-52 lg:max-w-56">
+              <div className="relative w-40 md:w-44 lg:w-48 aspect-square mx-auto">
+                <Image
+                  src="/images/landing/sate-list-2.svg"
+                  alt="sate-list-1"
+                  quality={100}
+                  fill
+                  sizes="(min-width: 600px) 200px, (min-width: 1024px) 240px"
+                  className="w-full object-cover"
+                />
+              </div>
+              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
                 <p>Berdoalah dan mohon pimpinan Tuhan</p>
               </div>
             </div>
-            <div className="flex-1 min-w-40 max-w-48">
-              <Image
-                src="/images/landing/sate-list-3.svg"
-                alt="sate-list-1"
-                quality={100}
-                width={120}
-                height={120}
-                className="mx-auto"
-              />
-              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
+            <div className="flex-1 min-w-40 max-w-48 md:max-w-52 lg:max-w-56">
+              <div className="relative w-40 md:w-44 lg:w-48 aspect-square mx-auto">
+                <Image
+                  src="/images/landing/sate-list-3.svg"
+                  alt="sate-list-1"
+                  quality={100}
+                  fill
+                  sizes="(min-width: 600px) 200px, (min-width: 1024px) 240px"
+                  className="w-full object-cover"
+                />
+              </div>
+              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
                 <p>Baca dan renungkan Firman Tuhan</p>
               </div>
             </div>
-            <div className="flex-1 min-w-40 max-w-48">
-              <Image
-                src="/images/landing/sate-list-4.svg"
-                alt="sate-list-1"
-                quality={100}
-                width={120}
-                height={120}
-                className="mx-auto"
-              />
-              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full">
+            <div className="flex-1 min-w-40 max-w-48 md:max-w-52 lg:max-w-56">
+              <div className="relative w-40 md:w-44 lg:w-48 aspect-square mx-auto">
+                <Image
+                  src="/images/landing/sate-list-4.svg"
+                  alt="sate-list-1"
+                  quality={100}
+                  fill
+                  sizes="(min-width: 600px) 200px, (min-width: 1024px) 240px"
+                  className="w-full object-cover"
+                />
+              </div>
+              <div className="rounded-full text-sm bg-white p-2 text-center text-mandy font-semibold w-full md:p-3 md:px-4">
                 <p>Tutup kembali dengan doa</p>
               </div>
             </div>
@@ -350,15 +358,15 @@ export default function Home() {
         id="about-pskj"
       >
         <h1 className="text-2xl font-semibold lg:text-3xl">Yuk Kenalan Sama Persekutuan Siswa Kristen Jakarta (PSKJ)! </h1>
-        <p className="text-sm lg:text-base">
+        <p className="text-sm md:text-base">
           Remaja merupakan masa mencari identitas diri. Maka dari itu, pelayanan siswa Perkantas berfokus pada penginjilan dan pemuridan kepada siswa,
           sehingga siswa dapat mempertuhankan Kristus dalam setiap aspek hidupnya, serta menangkap identitasnya sebagai yang murid Kristus, menjadi
           garam dan terang bagi lingkungan sekitar, gereja, bangsa, dan dunia.
         </p>
-        <h2 className="text-lg font-semibold text-mandy text-center lg:text-2xl">Kegiatan Rutin PSKJ</h2>
+        <h2 className="text-lg font-semibold text-mandy text-center md:text-xl lg:text-2xl">Kegiatan Rutin PSKJ</h2>
         <div className="grid gap-2 lg:grid-cols-3 lg:mb-6">
           <div className="grid gap-1 p-4 text-center">
-            <div className="relative aspect-square w-[120px] lg:w-[144px] mx-auto">
+            <div className="relative aspect-square w-[120px] md:w-[132px] lg:w-[144px] mx-auto">
               <Image
                 src={"/images/landing/event-1.svg"}
                 alt="Student Fellowship"
@@ -366,14 +374,14 @@ export default function Home() {
                 fill
               />
             </div>
-            <h3 className="font-semibold lg:text-xl">Student Fellowship</h3>
-            <p className="text-sm lg:text-base">
+            <h3 className="font-semibold md:text-lg lg:text-xl">Student Fellowship</h3>
+            <p className="text-sm md:max-w-[480px] md:mx-auto md:text-base">
               Diadakan di wilayah masing-masing setiap bulan (minggu ke 1 dan 3), dengan tujuan membina siswa khususnya pengurus Rohkris dalam
               melayani.
             </p>
           </div>
           <div className="grid gap-1 p-4 text-center">
-            <div className="relative aspect-square w-[120px] lg:w-[144px] mx-auto">
+            <div className="relative aspect-square w-[120px] md:w-[132px] lg:w-[144px] mx-auto">
               <Image
                 src={"/images/landing/event-2.svg"}
                 alt="Kelompok Kecil"
@@ -381,13 +389,13 @@ export default function Home() {
                 fill
               />
             </div>
-            <h3 className="font-semibold lg:text-xl">Kelompok Kecil</h3>
-            <p className="text-sm lg:text-base">
+            <h3 className="font-semibold md:text-lg lg:text-xl">Kelompok Kecil</h3>
+            <p className="text-sm md:max-w-[480px] md:mx-auto md:text-base">
               Terdiri dari pengurus atau siswa yang aktif dalam kegiatan Rohkris dan dipimpin oleh TPS (Tim Pembimbing siswa) serta Staf Siswa..
             </p>
           </div>
           <div className="grid gap-1 p-4 text-center">
-            <div className="relative aspect-square w-[120px] lg:w-[144px] mx-auto">
+            <div className="relative aspect-square w-[120px] md:w-[132px] lg:w-[144px] mx-auto">
               <Image
                 src={"/images/landing/event-1.svg"}
                 alt="Student Fellowship"
@@ -395,13 +403,13 @@ export default function Home() {
                 fill
               />
             </div>
-            <h3 className="font-semibold lg:text-xl">Visitasi Sekolah</h3>
-            <p className="text-sm lg:text-base">Pendampingan dan kunjungan Rohkris yang dikerjakan oleh TPS.</p>
+            <h3 className="font-semibold md:text-lg lg:text-xl">Visitasi Sekolah</h3>
+            <p className="text-sm md:max-w-[480px] md:mx-auto md:text-base">Pendampingan dan kunjungan Rohkris yang dikerjakan oleh TPS.</p>
           </div>
         </div>
       </Section>
       <Section wrapperClassName={"p-0 px-0 pb-8 lg:mb-6"}>
-        <h2 className="text-lg font-semibold text-mandy text-center lg:text-2xl lg:mb-8">Kegiatan Non-Rutin PSKJ</h2>
+        <h2 className="text-lg font-semibold text-mandy text-center md:text-xl md:mb-6 lg:text-2xl lg:mb-8">Kegiatan Non-Rutin PSKJ</h2>
         <div className="lg:hidden">
           <CustomCarousel>
             {eventPSKJ.map((event) => {
@@ -420,8 +428,8 @@ export default function Home() {
                     className="object-cover w-full absolute top-0"
                   />
                   <div className="absolute bottom-0 text-white px-4 pb-2.5">
-                    <h3 className="font-semibold mb-1.5">{event.title}</h3>
-                    <p>{event.description}</p>
+                    <h3 className="font-semibold mb-1.5 md:text-lg ">{event.title}</h3>
+                    <p className="h-12">{event.description}</p>
                   </div>
                 </div>
               );
@@ -455,7 +463,7 @@ export default function Home() {
       </Section>
 
       <Section wrapperClassName={"p-0 px-0 pb-8"}>
-        <h2 className="text-lg font-semibold text-mandy text-center lg:text-2xl lg:mb-6">Sejarah PSKJ</h2>
+        <h2 className="text-lg font-semibold text-mandy text-center md:text-xl md:mb-6 lg:text-2xl lg:mb-6">Sejarah PSKJ</h2>
         <CustomCarousel>
           {sejarah.map((card, index) => {
             return (
