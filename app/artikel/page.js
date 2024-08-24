@@ -65,10 +65,10 @@ export default function ArticleListPage({ searchParams }) {
         className={"py-6 relative z-[1]"}
         wrapperClassName={"grid gap-6 px-4"}
       >
-        <h1 className="text-xl text-center font-semibold">Renungan Saat Teduh</h1>
+        <h1 className="text-xl text-center font-semibold">Artikel Rohani</h1>
         <div className="px-8">
           <Input
-            placeholder="Cari Renungan"
+            placeholder="Cari Artikel"
             icon={<Search />}
             // value={""}
           />
@@ -77,7 +77,6 @@ export default function ArticleListPage({ searchParams }) {
           {listArticle.map((article) => {
             return (
               <Article
-                type={"saat-teduh"}
                 variant={"list"}
                 article={article}
                 key={article.date}

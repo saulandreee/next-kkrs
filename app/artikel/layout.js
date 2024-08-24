@@ -11,7 +11,7 @@ export const metadata = {
 export default function SateLayout({ children }) {
   return (
     <main className="relative">
-      <div className="absolute -top-1 !h-auto max-h-full overflow-hidden">
+      <div className="absolute -top-1 !h-auto min-h-[calc(100vh-56px)] max-h-full overflow-hidden">
         <Image
           className="object-cover w-full aspect-[435/1966]"
           src={"/images/article/article-bg.svg"}

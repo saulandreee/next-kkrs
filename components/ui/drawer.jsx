@@ -5,8 +5,9 @@ import { Drawer as DrawerPrimitive } from "vaul";
 
 import { cn } from "@/lib/utils";
 
-const Drawer = ({ shouldScaleBackground = true, ...props }) => (
+const Drawer = ({ className, shouldScaleBackground = true, ...props }) => (
   <DrawerPrimitive.Root
+    className={className}
     shouldScaleBackground={shouldScaleBackground}
     {...props}
   />
@@ -28,8 +29,8 @@ const DrawerOverlay = React.forwardRef(({ className, ...props }, ref) => (
 ));
 DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName;
 
-const DrawerContent = React.forwardRef(({ className, children, ...props }, ref) => (
-  <DrawerPortal>
+const DrawerContent = React.forwardRef(({ className, wrapperClassName, children, ...props }, ref) => (
+  <DrawerPortal wrapperClassName={wrapperClassName}>
     <DrawerOverlay />
     <DrawerPrimitive.Content
       ref={ref}

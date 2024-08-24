@@ -331,8 +331,9 @@ export default function Home() {
         </CustomCarousel>
       </Section>
       <Section
-        className={"py-8"}
+        className={"py-8 scroll-mt-8 lg:scroll-mt-16 "}
         wrapperClassName={"px-3 grid gap-6"}
+        id="about-pskj"
       >
         <h1 className="text-2xl font-semibold">Yuk Kenalan Sama Persekutuan Siswa Kristen Jakarta (PSKJ)! </h1>
         <p className="text-sm">

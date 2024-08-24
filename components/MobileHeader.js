@@ -15,19 +15,24 @@ import Button from "./Button";
 import { ArrowLeft, MenuIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
-export default function MobileHeader() {
+export default function MobileHeader({ className }) {
   return (
-    <Drawer direction="left">
+    <Drawer
+      direction="left"
+      className={className}
+    >
       <DrawerTrigger asChild>
         <Button
           size="icon"
           variant="ghost"
+          className={className}
         >
           <MenuIcon />
         </Button>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent wrapperClassName={className}>
         <div className="px-3 py-1 flex gap-2 items-center">
           <DrawerClose asChild>
             <Button
