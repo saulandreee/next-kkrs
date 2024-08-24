@@ -140,7 +140,6 @@ var eventPSKJ = [
     image: faker.image.url({ width: 224, height: "232" }),
   },
 ];
-
 var sejarah = [
   {
     date: "29 Juni 1971",
@@ -318,12 +317,26 @@ export default function Home() {
             color={"white"}
             className={"hidden lg:block"}
           />
-          <div className="grid gap-2 w-full">
+          <div className="grid gap-2 w-full lg:hidden">
             {listArticle.slice(1).map((article, index) => {
               return (
                 <Article
                   key={index}
                   article={article}
+                  variant={"list"}
+                  type={"sate"}
+                  color={"pourri"}
+                />
+              );
+            })}
+          </div>
+          <div className="gap-2 w-full hidden lg:grid">
+            {listArticle.slice(1).map((article, index) => {
+              return (
+                <Article
+                  key={index}
+                  article={article}
+                  forceSize="sm"
                   variant={"list"}
                   type={"sate"}
                   color={"pourri"}

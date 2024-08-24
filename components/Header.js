@@ -21,7 +21,7 @@ export default function Header() {
               width={48}
               height={48}
               quality={100}
-              sizes="(min-width:300px) 28px, (min-width: 600px) 48px, (min-width: 1200px) 64px"
+              sizes="(min-width: 600px) 48px, (min-width: 1000px) 100px, 200px"
             />
             <span className="text-mandy-500 text-sm md:text-lg lg:text-2xl font-extrabold">KKRS 2024</span>
           </Link>

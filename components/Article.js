@@ -22,12 +22,17 @@ const cardVariants = cva("shadow overflow-hidden w-full", {
     color: "white",
   },
 });
-export default function Article({ article, variant, color, type, className }) {
+export default function Article({ article, variant, color, type, forceSize, className }) {
   return (
-    <div className={cn(cardVariants({ variant, color, className }))}>
+    <div className={cn(cardVariants({ variant, color, className }), forceSize === "sm" ? "p-2 md:p-2 lg:p-2" : "")}>
       {variant === "list" ? (
         <>
-          <div className="relative aspect-[96/72] w-[96px] grow-0 shrink-0 h-fit md:w-[160px] md:aspect-[232/160] lg:w-[232px] ">
+          <div
+            className={cn(
+              "relative aspect-[96/72] w-[96px] grow-0 shrink-0 h-fit md:w-[160px] md:aspect-[232/160] lg:w-[232px]",
+              forceSize === "sm" ? "md:w-aspect-[96/72] md:w-[96px] lg:w-aspect-[96/72] lg:w-[96px] :" : ""
+            )}
+          >
             <Image
               src={article.image}
               alt={article.title}
@@ -37,9 +42,11 @@ export default function Article({ article, variant, color, type, className }) {
             />
           </div>
           <div className="grid gap-0.5 h-fit">
-            <div className="text-base font-semibold line-clamp-2 md:text-xl lg:text-2xl">{article.title}</div>
+            <div className={cn("text-base font-semibold line-clamp-2 md:text-xl lg:text-2xl", forceSize === "sm" ? "md:text-base lg:text-base" : "")}>
+              {article.title}
+            </div>
             {type === "sate" ? (
-              <div className="text-sm md:text-base">
+              <div className={cn("text-sm md:text-base", forceSize === "sm" ? "md:text-sm" : "")}>
                 <span className="">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
                 <span className="text-mandy">{article.bible}</span>
               </div>
@@ -49,7 +56,7 @@ export default function Article({ article, variant, color, type, className }) {
                 <span className="">{article.author}</span>
               </div>
             )}
-            <p className="text-sm line-clamp-3 md:text-base">{article.description}</p>
+            <p className={cn("text-sm line-clamp-3 md:text-base", forceSize === "sm" ? "md:text-sm lg:text-sm" : "")}>{article.description}</p>
           </div>
         </>
       ) : variant === "main" ? (
