@@ -38,12 +38,13 @@ export default function Article({ article, variant, color, type, className }) {
             <div className="text-base font-semibold line-clamp-2">{article.title}</div>
             {type === "sate" ? (
               <div>
-                <span className="text-sm">{moment(article.date).format("D MMMM YYYY")}</span> &#x2022;{" "}
+                <span className="text-sm">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
                 <span className="text-mandy">{article.bible}</span>
               </div>
             ) : (
               <div>
-                <span className="text-sm">{moment(article.date).format("D MMMM YYYY")}</span> &#x2022; <span className="">{article.author}</span>
+                <span className="text-sm">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
+                <span className="">{article.author}</span>
               </div>
             )}
             <p className="text-sm line-clamp-3">{article.description}</p>
