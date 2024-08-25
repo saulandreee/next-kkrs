@@ -229,12 +229,12 @@ export default function Home() {
             bahwa hanya Kristus yang mampu memberikan hidup yang penuh makna dan keselamatan yang kekal.
           </p>
         </div>
-        <div className="shrink-0 grow-0 relative top-4 h-fit aspect-square w-[120px] md:w-[240px] md:top-0 lg:w-[320px]">
+        <div className="shrink-0 grow-0 relative top-4 h-fit aspect-square w-[120px] md:w-[240px] md:top-0 lg:!w-[320px]">
           <Image
             src="/logo-nocross-lg.png"
             quality={100}
             fill
-            sizes="(min-width: 300px) 120px,(min-width: 800px) 240px, (min-width: 1200px) 600px, 600px"
+            sizes="(min-width: 300px) 40vw, (min-width: 768px) 20vw, (min-width: 1080px) 20vw, 15vw"
             alt="logo"
             priority={true}
             loading="eager"
