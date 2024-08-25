@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { faker } from "@faker-js/faker";
 import Image from "next/image";
 import Link from "next/link";
+import { WPArticle } from "@/lib/wpgraphql";
 
 var listArticle = [
   {
@@ -193,7 +194,11 @@ var sejarah = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const data = await WPArticle.getPosts();
+  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+  console.log(data);
+
   return (
     <main className="relative overflow-hidden">
       <div className="absolute top-[420px] w-full aspect-[368/3368] md:hidden">
@@ -439,7 +444,6 @@ export default function Home() {
         <div className="lg:hidden">
           <CustomCarousel>
             {eventPSKJ.map((event) => {
-              console.log(event);
               return (
                 <div
                   className="relative rounded-xl shadow aspect-[224/232] overflow-hidden"
@@ -464,7 +468,6 @@ export default function Home() {
         </div>
         <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6">
           {eventPSKJ.map((event) => {
-            console.log(event);
             return (
               <div
                 className="relative rounded-xl shadow aspect-[360/232] overflow-hidden"
