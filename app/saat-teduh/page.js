@@ -5,6 +5,8 @@ import { Search } from "lucide-react";
 import Article from "@/components/Article";
 import { faker } from "@faker-js/faker";
 import Pagination from "@/components/Pagination";
+import CtfArticle from "@/lib/article";
+import Link from "next/link";
 
 var listArticle = [
   {
@@ -57,8 +59,14 @@ var listArticle = [
   },
 ];
 
-export default function ArticleListPage({ searchParams }) {
-  console.log(searchParams);
+export default async function ArticleListPage({ searchParams }) {
+  // console.log(searchParams);
+
+  var data = await CtfArticle.getAllPosts();
+  // console.log(data);
+
+  var sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
+
   return (
     <>
       <Section
@@ -67,33 +75,38 @@ export default function ArticleListPage({ searchParams }) {
       >
         <div className="flex flex-col gap-2.5 md:gap-4 lg:flex-row lg:justify-between lg:items-center lg:mb-4">
           <h1 className="text-xl text-center font-semibold md:text-2xl lg:text-3xl">Renungan Saat Teduh</h1>
-          <div className="px-8 lg:px-0 lg:w-[300px]">
+          {/* <div className="px-8 lg:px-0 lg:w-[300px]">
             <Input
               placeholder="Cari Renungan"
               icon={<Search />}
 
               // value={""}
             />
-          </div>
+          </div> */}
         </div>
         <div className="grid gap-2.5">
-          {listArticle.map((article) => {
+          {sate.map((article) => {
             return (
-              <Article
-                variant={"list"}
-                type={"sate"}
-                article={article}
+              <Link
+                href={`saat-teduh/${article.slug}`}
+                className="block"
                 key={article.date}
-              />
+              >
+                <Article
+                  variant={"list"}
+                  type={"sate"}
+                  article={article}
+                />
+              </Link>
             );
           })}
         </div>
-        <div>
+        {/* <div>
           <Pagination
             count={2}
             page={parseInt(searchParams.page) || 1}
           />
-        </div>
+        </div> */}
       </Section>
     </>
   );

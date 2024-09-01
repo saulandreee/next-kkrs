@@ -33,9 +33,9 @@ export default function Header() {
               <Button variant={"ghost"}>Beranda</Button>
             </Link>
 
-            <Link href={"/artikel"}>
+            {/* <Link href={"/artikel"}>
               <Button variant={"ghost"}>Artikel</Button>
-            </Link>
+            </Link> */}
 
             <Link href={"/#about-pskj"}>
               <Button variant={"ghost"}>Tentang PSKJ</Button>

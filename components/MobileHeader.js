@@ -80,7 +80,7 @@ export default function MobileHeader({ className }) {
               Beranda
             </Button>
           </DrawerClose>
-          <DrawerClose asChild>
+          {/* <DrawerClose asChild>
             <Button
               variant={"ghost"}
               onClick={() => handleLinkClick("/artikel")}
@@ -90,11 +90,11 @@ export default function MobileHeader({ className }) {
               <LibraryBig className="w-6 h-6" />
               Artikel
             </Button>
-          </DrawerClose>
+          </DrawerClose> */}
           <DrawerClose asChild>
             <Button
               variant={"ghost"}
-              onClick={() => handleLinkClick("/#about-pskj")}
+              onClick={() => handleLinkClick("/?#about-pskj")}
               className={cn("w-full justify-start rounded-lg px-4 gap-2.5", currentPath.includes("#about-pskj") ? "bg-mandy-100" : "")}
               size="lg"
             >

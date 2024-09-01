@@ -207,8 +207,11 @@ export default async function Home() {
       {/* <div className="prose list-disc">
         <div className="p-4 rounded border">{data.map((post) => documentToReactComponents(post.html))}</div>
       </div> */}
-      <main className="relative overflow-hidden">
-        <div className="absolute top-[420px] w-full aspect-[368/3368] md:hidden">
+      <main className="relative overflow-hidden scroll-smooth">
+        <div
+          className="absolute top-[420px] w-full aspect-[368/3368] md:hidden"
+          id="hero"
+        >
           <Image
             src={"/images/landing/bg-landing.svg"}
             alt="bg-landing"

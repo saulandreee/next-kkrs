@@ -6,13 +6,13 @@ import moment from "moment";
 import Image from "next/image";
 
 export default async function ArticleDetail({ searchParams, params }) {
-  console.log(params.slug);
-  var data = await CtfArticle.getAllPosts(params.slug);
+  var data = await CtfArticle.getAllPosts(params.slug, undefined);
   data = data.items.map((item) => {
     console.log(item.fields.cover_image.fields.file.url);
     return { ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url };
   });
   data = data[0];
+
   return (
     <Section
       className={"p-2.5 py-6 relative z-[1]"}
