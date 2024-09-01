@@ -522,7 +522,7 @@ export default async function Home() {
           </div>
         </Section>
 
-        <Section wrapperClassName={"p-0 px-0 pb-8"}>
+        {/* <Section wrapperClassName={"p-0 px-0 pb-8"}>
           <h2 className="text-lg font-semibold text-mandy text-center md:text-xl md:mb-6 lg:text-2xl lg:mb-6">Sejarah PSKJ</h2>
           <CustomCarousel>
             {sejarah.map((card, index) => {
@@ -549,7 +549,7 @@ export default async function Home() {
               );
             })}
           </CustomCarousel>
-        </Section>
+        </Section> */}
       </main>
     </>
   );
