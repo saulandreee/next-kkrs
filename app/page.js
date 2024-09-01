@@ -486,10 +486,10 @@ export default async function Home() {
                       quality={100}
                       width={224}
                       height={232}
-                      className="object-cover w-full absolute top-0"
+                      className="object-cover h-full w-full lg:w-full absolute top-0"
                     />
-                    <div className="absolute bottom-0 text-white px-4 pb-2.5">
-                      <h3 className="font-semibold mb-1.5 md:text-lg ">{event.title}</h3>
+                    <div className="absolute w-full bottom-0 text-white px-4 pb-2.5 bg-gradient-to-b from-transparent to-mandy-950">
+                      <h3 className="font-extrabold md:text-lg ">{event.title}</h3>
                       <p className="h-12">{event.description}</p>
                     </div>
                   </div>
