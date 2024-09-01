@@ -48,7 +48,8 @@ export default async function ArticleDetail({ searchParams, params }) {
       <div className="bg-mandy-100 rounded-lg text-xs p-2.5 mb-4 w-full max-w-none lg:text-base lg:p-4 prose">
         {documentToReactComponents(data.verse)}
       </div>
-      <article className="text-xs md:text-base prose">{documentToReactComponents(data.html)}</article>
+      <article className="text-xs md:text-base prose mb-4 lg:mb-6">{documentToReactComponents(data.html)}</article>
+      <p className="text-xs lg:text-sm italic text-mandy-500">Ditulis oleh: {data.author}</p>
     </Section>
   );
 }
