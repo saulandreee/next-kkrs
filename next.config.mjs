@@ -10,6 +10,10 @@ const nextConfig = {
         hostname: "loremflickr.com",
         protocol: "https",
       },
+      {
+        hostname: "images.ctfassets.net",
+        protocol: "https",
+      },
     ],
   },
 };

@@ -197,8 +197,10 @@ var sejarah = [
 ];
 
 export default async function Home() {
-  // var data = await CtfArticle.getAllPosts();
-  // data = data.items.map((item) => item.fields);
+  var data = await CtfArticle.getAllPosts();
+  const sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
+  console.log(sate[0]);
+  console.log("https:" + sate[0].cover_image.fields.file.url);
 
   return (
     <>
@@ -324,59 +326,77 @@ export default async function Home() {
           className=""
           wrapperClassName={"grid gap-4 py-8 lg:gap-8"}
         >
-          <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl">Renungan Saat Teduh & Artikel Rohani</h1>
-          {/* <div className="grid gap-2 w-full lg:grid-cols-2 lg:gap-6">
-            <Article
-              article={listArticle[0]}
-              variant={"list"}
-              type={"sate"}
-              color={"white"}
+          <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl">Renungan Saat Teduh</h1>
+          <div className={cn("gap-2 w-full lg:gap-6", sate.length > 1 ? "grid lg:grid-cols-2" : "flex justify-center")}>
+            <Link
+              href={`/saat-teduh/${sate[0].slug}`}
               className={"lg:hidden"}
-            />
-            <Article
-              article={listArticle[0]}
-              variant={"main"}
-              type={"sate"}
-              color={"white"}
-              className={"hidden lg:block"}
-            />
-            <div className="grid gap-2 w-full lg:hidden">
-              {listArticle.slice(1).map((article, index) => {
+            >
+              <Article
+                article={sate[0]}
+                href={`/saat-teduh/${sate[0].slug}`}
+                variant={"list"}
+                type={"sate"}
+                color={"white"}
+              />
+            </Link>
+            <Link
+              href={`/saat-teduh/${sate[0].slug}`}
+              className={"hidden lg:block max-w-[50%] mx-auto"}
+            >
+              <Article
+                article={sate[0]}
+                variant={"main"}
+                type={"sate"}
+                color={"white"}
+              />
+            </Link>
+            <div className={cn("grid gap-2 w-full lg:hidden justify-center", sate.length > 1 ? "block" : "hidden")}>
+              {sate.slice(1).map((article, index) => {
                 return (
-                  <Article
+                  <Link
+                    href={`/saat-teduh/${article.slug}`}
                     key={index}
-                    article={article}
-                    variant={"list"}
-                    type={"sate"}
-                    color={"pourri"}
-                  />
+                  >
+                    <Article
+                      article={article}
+                      variant={"list"}
+                      type={"sate"}
+                      color={"pourri"}
+                    />
+                  </Link>
                 );
               })}
             </div>
-            <div className="gap-2 w-full hidden lg:grid">
-              {listArticle.slice(1).map((article, index) => {
+            <div className={cn("gap-2 w-full hidden lg:grid", sate.length > 1 ? "block" : "hidden lg:hidden")}>
+              {sate.slice(1).map((article, index) => {
                 return (
-                  <Article
+                  <Link
+                    href={`/saat-teduh/${article.slug}`}
                     key={index}
-                    article={article}
-                    forceSize="sm"
-                    variant={"list"}
-                    type={"sate"}
-                    color={"pourri"}
-                  />
+                  >
+                    <Article
+                      article={article}
+                      variant={"list"}
+                      type={"sate"}
+                      color={"pourri"}
+                    />
+                  </Link>
                 );
               })}
             </div>
           </div>
-          <Link
-            href={"/"}
-            className="mx-auto"
-          >
-            <Button variant="ghost">Lihat Renungan lainnya</Button>
-          </Link> */}
-          <h2 className="text-lg text-mandy-500/50 italic text-center">
+          {sate.length > 1 && (
+            <Link
+              href={"/"}
+              className="mx-auto"
+            >
+              <Button variant="ghost">Lihat Renungan lainnya</Button>
+            </Link>
+          )}
+          {/* <h2 className="text-lg text-mandy-500/50 italic text-center">
             Saat teduh & artikel rohani dapat diakses di tanggal 1 September guys! Pantengin terus yaa!
-          </h2>
+          </h2> */}
         </Section>
         {/* <Section wrapperClassName={"p-0 px-0 pb-8"}>
           <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl lg:mb-6">Artikel Rohani Lainnya</h1>

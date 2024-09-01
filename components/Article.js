@@ -34,7 +34,7 @@ export default function Article({ article, variant, color, type, forceSize, clas
             )}
           >
             <Image
-              src={article.image}
+              src={article.image_url}
               alt={article.title}
               quality={100}
               fill
@@ -49,22 +49,22 @@ export default function Article({ article, variant, color, type, forceSize, clas
             {type === "sate" ? (
               <div className={cn("text-sm md:text-base", forceSize === "sm" ? "md:text-sm" : "")}>
                 <span className="">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
-                <span className="text-mandy">{article.bible}</span>
+                <span className="text-mandy">{article.bibleVerse}</span>
               </div>
             ) : (
               <div className="text-sm md:text-base">
                 <span>{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
-                <span className="">{article.author}</span>
+                <span className="">{article.author || "" || "" || ""}</span>
               </div>
             )}
-            <p className={cn("text-sm line-clamp-3 md:text-base", forceSize === "sm" ? "md:text-sm lg:text-sm" : "")}>{article.description}</p>
+            <p className={cn("text-sm line-clamp-3 md:text-base", forceSize === "sm" ? "md:text-sm lg:text-sm" : "")}>{article.excerpt}</p>
           </div>
         </>
       ) : variant === "main" ? (
         <>
           <div className="relative aspect-[512/300] w-full mb-4">
             <Image
-              src={article.image}
+              src={article.image_url}
               alt={article.title}
               quality={100}
               fill
@@ -76,14 +76,14 @@ export default function Article({ article, variant, color, type, forceSize, clas
           {type === "sate" ? (
             <div className="text-base">
               <span className="">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
-              <span className="text-mandy">{article.bible}</span>&nbsp;-&nbsp;
-              <p className="line-clamp-3 inline">{article.description}</p>
+              <span className="text-mandy">{article.bibleVerse}</span>&nbsp;-&nbsp;
+              <p className="line-clamp-3 inline">{article.excerpt}</p>
             </div>
           ) : (
             <div>
               <span className="">{moment(article.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
-              <span className="">{article.author}</span>&nbsp;-&nbsp;
-              <p className="line-clamp-3 inline">{article.description}</p>
+              <span className="">{article.author || "" || ""}</span>&nbsp;-&nbsp;
+              <p className="line-clamp-3 inline">{article.excerpt}</p>
             </div>
           )}
         </>
@@ -91,7 +91,7 @@ export default function Article({ article, variant, color, type, forceSize, clas
         <>
           <div className="!aspect-[240/150]">
             <Image
-              src={article.image}
+              src={article.image_url}
               alt={article.title}
               quality={100}
               width={240}
@@ -105,11 +105,12 @@ export default function Article({ article, variant, color, type, forceSize, clas
             {type === "sate" ? (
               <div>
                 <span className="text-sm">{moment(article.date).format("D MMMM YYYY")}</span> &#x2022;{" "}
-                <span className="text-mandy">{article.bible}</span>
+                <span className="text-mandy">{article.bibleVerse}</span>
               </div>
             ) : (
               <div>
-                <span className="text-sm">{moment(article.date).format("D MMMM YYYY")}</span> &#x2022; <span className="">{article.author}</span>
+                <span className="text-sm">{moment(article.date).format("D MMMM YYYY")}</span> &#x2022;{" "}
+                <span className="">{article.author || ""}</span>
               </div>
             )}
             <p className="text-sm line-clamp-3">{article.description}</p>
