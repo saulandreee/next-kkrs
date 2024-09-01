@@ -1,0 +1,5 @@
+export default async function Home() {
+  <main className="h-scree w-screen flex justify-center items-center">
+    <h1 className="text-xl text-mandy-500">Hai haii! Website ini bisa diakses sejak 1 September 2024. Tungguin terus yaaa!</h1>
+  </main>;
+}

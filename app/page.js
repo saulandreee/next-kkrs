@@ -115,32 +115,32 @@ var eventPSKJ = [
   {
     title: "KKR Siswa",
     description: "Kebaktian Kebangunan Rohani Siswa Jakarta",
-    image: faker.image.url({ width: 224, height: "232" }),
+    image: "/images/kegiatan/kkrs.jpg",
   },
   {
     title: "KKSJ",
     description: "Kamp Kepemimpinan Siswa Jakarta",
-    image: faker.image.url({ width: 224, height: "232" }),
+    image: "/images/kegiatan/kksj.jpg",
   },
   {
     title: "RKK",
     description: "Retreat Kelompok Kecil",
-    image: faker.image.url({ width: 224, height: "232" }),
+    image: "/images/kegiatan/rkks.JPG",
   },
   {
     title: "BHS",
     description: "Beyond High School",
-    image: faker.image.url({ width: 224, height: "232" }),
+    image: "/images/kegiatan/bhs.jpg",
   },
   {
     title: "KPD",
     description: "Kebaktian Pengutusan dan Doa",
-    image: faker.image.url({ width: 224, height: "232" }),
+    image: "/images/kegiatan/kpd.JPG",
   },
   {
     title: "HDSN",
     description: "Hari Doa Siswa Nasional",
-    image: faker.image.url({ width: 224, height: "232" }),
+    image: "/images/kegiatan/hdsn.jpg",
   },
 ];
 var sejarah = [
@@ -197,15 +197,14 @@ var sejarah = [
 ];
 
 export default async function Home() {
-  var data = await CtfArticle.getAllPosts();
-  data = data.items.map((item) => item.fields);
+  // var data = await CtfArticle.getAllPosts();
+  // data = data.items.map((item) => item.fields);
 
   return (
     <>
-      <div className="prose list-disc">
-        {/* <pre>{JSON.stringify(data, false, 2)}</pre> */}
+      {/* <div className="prose list-disc">
         <div className="p-4 rounded border">{data.map((post) => documentToReactComponents(post.html))}</div>
-      </div>
+      </div> */}
       <main className="relative overflow-hidden">
         <div className="absolute top-[420px] w-full aspect-[368/3368] md:hidden">
           <Image
@@ -325,8 +324,8 @@ export default async function Home() {
           className=""
           wrapperClassName={"grid gap-4 py-8 lg:gap-8"}
         >
-          <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl">Renungan Saat Teduh</h1>
-          <div className="grid gap-2 w-full lg:grid-cols-2 lg:gap-6">
+          <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl">Renungan Saat Teduh & Artikel Rohani</h1>
+          {/* <div className="grid gap-2 w-full lg:grid-cols-2 lg:gap-6">
             <Article
               article={listArticle[0]}
               variant={"list"}
@@ -374,9 +373,12 @@ export default async function Home() {
             className="mx-auto"
           >
             <Button variant="ghost">Lihat Renungan lainnya</Button>
-          </Link>
+          </Link> */}
+          <h2 className="text-lg text-mandy-500/50 italic text-center">
+            Saat teduh & artikel rohani dapat diakses di tanggal 1 September guys! Pantengin terus yaa!
+          </h2>
         </Section>
-        <Section wrapperClassName={"p-0 px-0 pb-8"}>
+        {/* <Section wrapperClassName={"p-0 px-0 pb-8"}>
           <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl lg:mb-6">Artikel Rohani Lainnya</h1>
           <CustomCarousel>
             {bigListArticle.map((article, index) => (
@@ -388,7 +390,7 @@ export default async function Home() {
               />
             ))}
           </CustomCarousel>
-        </Section>
+        </Section> */}
         <Section
           className={"py-8 scroll-mt-8 lg:scroll-mt-16 "}
           wrapperClassName={"px-3 grid gap-6 lg:gap-8"}
