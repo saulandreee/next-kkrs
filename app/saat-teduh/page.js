@@ -66,6 +66,7 @@ export default async function ArticleListPage({ searchParams }) {
   // console.log(data);
 
   var sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
+  sate = _.orderBy(sate, "date", "desc");
 
   return (
     <>

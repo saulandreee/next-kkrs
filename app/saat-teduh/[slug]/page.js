@@ -45,11 +45,11 @@ export default async function ArticleDetail({ searchParams, params }) {
         <span>{moment(data.date).format("D MMMM YYYY")}</span>&nbsp;&#x2022;&nbsp;
         <span className="text-mandy-500">{data.bibleVerse}</span>
       </div>
-      <div className="bg-mandy-100 rounded-lg text-xs p-2.5 mb-4 w-full max-w-none lg:text-base lg:p-4 prose">
+      <div className="bg-mandy-100 rounded-lg text-sm p-2.5 mb-4 w-full max-w-none lg:text-base lg:p-4 prose">
         {documentToReactComponents(data.verse)}
       </div>
-      <article className="text-xs md:text-base prose mb-4 lg:mb-6">{documentToReactComponents(data.html)}</article>
-      <p className="text-xs lg:text-sm italic text-mandy-500">Ditulis oleh: {data.author}</p>
+      <article className="text-sm md:text-base prose mb-4 lg:mb-6">{documentToReactComponents(data.html)}</article>
+      <p className="text-sm lg:text-sm italic text-mandy-500">Ditulis oleh: {data.author}</p>
     </Section>
   );
 }

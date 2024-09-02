@@ -29,7 +29,7 @@ export default function Article({ article, variant, color, type, forceSize, clas
         <>
           <div
             className={cn(
-              "relative aspect-[96/72] w-[96px] grow-0 shrink-0 h-fit md:w-[160px] md:aspect-[232/160] lg:w-[232px]",
+              "relative aspect-[96/72] w-[96px] grow-0 shrink-0 h-fit md:w-[160px] md:aspect-[232/160]",
               forceSize === "sm" ? "md:w-aspect-[96/72] md:w-[96px] lg:w-aspect-[96/72] lg:w-[96px] :" : ""
             )}
           >
@@ -39,7 +39,7 @@ export default function Article({ article, variant, color, type, forceSize, clas
               quality={100}
               fill
               className="rounded-lg w-full object-cover lg:rounded-xl"
-              sizes="(min-width: 300px) 96px, (min-width: 768px) 160px, (min-width: 1080px) 232px, 232px"
+              sizes="(min-width: 300px) 96px, (min-width: 768px) 160px"
             />
           </div>
           <div className="grid gap-0.5 h-fit">

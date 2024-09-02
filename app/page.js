@@ -10,6 +10,7 @@ import Link from "next/link";
 import { WPArticle } from "@/lib/wpgraphql";
 import CtfArticle from "@/lib/article";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import _ from "lodash";
 
 var listArticle = [
   {
@@ -130,7 +131,7 @@ var eventPSKJ = [
   {
     title: "BHS",
     description: "Beyond High School",
-    image: "/images/kegiatan/bhs.jpg",
+    image: "/images/kegiatan/bhs2.jpg",
   },
   {
     title: "KPD",
@@ -198,9 +199,8 @@ var sejarah = [
 
 export default async function Home() {
   var data = await CtfArticle.getAllPosts();
-  const sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
-  console.log(sate[0]);
-  console.log("https:" + sate[0].cover_image.fields.file.url);
+  var sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
+  sate = _.orderBy(sate, "date", "desc");
 
   return (
     <>
@@ -345,7 +345,7 @@ export default async function Home() {
             </Link>
             <Link
               href={`/saat-teduh/${sate[0].slug}`}
-              className={"hidden lg:block max-w-[50%] mx-auto"}
+              className={cn("hidden lg:block", sate.length > 1 ? "" : "max-w-[50%] mx-auto")}
             >
               <Article
                 article={sate[0]}
@@ -354,7 +354,7 @@ export default async function Home() {
                 color={"white"}
               />
             </Link>
-            <div className={cn("grid gap-2 w-full lg:hidden justify-center", sate.length > 1 ? "block" : "hidden")}>
+            {/* <div className={cn("grid gap-2 w-full lg:hidden justify-center", sate.length > 1 ? "block" : "hidden")}>
               {sate.slice(1).map((article, index) => {
                 return (
                   <Link
@@ -370,7 +370,7 @@ export default async function Home() {
                   </Link>
                 );
               })}
-            </div>
+            </div> */}
             <div className={cn("gap-2 w-full hidden lg:grid", sate.length > 1 ? "block" : "hidden lg:hidden")}>
               {sate.slice(1).map((article, index) => {
                 return (
@@ -391,7 +391,7 @@ export default async function Home() {
           </div>
           {sate.length > 1 && (
             <Link
-              href={"/"}
+              href={"/saat-teduh"}
               className="mx-auto"
             >
               <Button variant="ghost">Lihat Renungan lainnya</Button>
@@ -508,7 +508,7 @@ export default async function Home() {
                     src={event.image}
                     alt={event.title}
                     quality={100}
-                    width={224}
+                    width={360}
                     height={232}
                     className="object-cover w-full h-full absolute top-0"
                   />
