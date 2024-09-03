@@ -11,6 +11,10 @@ import { WPArticle } from "@/lib/wpgraphql";
 import CtfArticle from "@/lib/article";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import _ from "lodash";
+import { Suspense } from "react";
+import { Loader } from "lucide-react";
+
+// export const revalidate = 60;
 
 var listArticle = [
   {
@@ -198,9 +202,10 @@ var sejarah = [
 ];
 
 export default async function Home() {
-  var data = await CtfArticle.getAllPosts();
+  var data = await CtfArticle.getAllPosts(undefined, undefined, 5);
   var sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
   sate = _.orderBy(sate, "date", "desc");
+  // var timeoutid = await new Promise((resolve, reject) => setTimeout(() => resolve(), 5000));
 
   return (
     <>
@@ -325,36 +330,44 @@ export default async function Home() {
             </div>
           </div>
         </Section>
-        <Section
-          className=""
-          wrapperClassName={"grid gap-4 py-8 lg:gap-8"}
+
+        <Suspense
+          fallback={
+            <div className="w-full h-20 flex items-center justify-center">
+              <Loader className="w-6 h-6 animate-spin" />
+            </div>
+          }
         >
-          <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl">Renungan Saat Teduh</h1>
-          <div className={cn("gap-2 w-full lg:gap-6", sate.length > 1 ? "grid lg:grid-cols-2" : "flex justify-center")}>
-            <Link
-              href={`/saat-teduh/${sate[0].slug}`}
-              className={"lg:hidden"}
-            >
-              <Article
-                article={sate[0]}
+          <Section
+            className=""
+            wrapperClassName={"grid gap-4 py-8 lg:gap-8"}
+          >
+            <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl">Renungan Saat Teduh</h1>
+            <div className={cn("gap-2 w-full lg:gap-6", sate.length > 1 ? "grid lg:grid-cols-2" : "flex justify-center")}>
+              <Link
                 href={`/saat-teduh/${sate[0].slug}`}
-                variant={"list"}
-                type={"sate"}
-                color={"white"}
-              />
-            </Link>
-            <Link
-              href={`/saat-teduh/${sate[0].slug}`}
-              className={cn("hidden lg:block", sate.length > 1 ? "" : "max-w-[50%] mx-auto")}
-            >
-              <Article
-                article={sate[0]}
-                variant={"main"}
-                type={"sate"}
-                color={"white"}
-              />
-            </Link>
-            {/* <div className={cn("grid gap-2 w-full lg:hidden justify-center", sate.length > 1 ? "block" : "hidden")}>
+                className={"lg:hidden"}
+              >
+                <Article
+                  article={sate[0]}
+                  href={`/saat-teduh/${sate[0].slug}`}
+                  variant={"list"}
+                  type={"sate"}
+                  color={"white"}
+                />
+              </Link>
+              <Link
+                href={`/saat-teduh/${sate[0].slug}`}
+                className={cn("hidden lg:block", sate.length > 1 ? "" : "max-w-[50%] mx-auto")}
+              >
+                <Article
+                  article={sate[0]}
+                  variant={"main"}
+                  type={"sate"}
+                  color={"white"}
+                />
+              </Link>
+              {/* <div className={cn("grid gap-2 w-full lg:hidden justify-center", sate.length > 1 ? "block" : "hidden")}>
               {sate.slice(1).map((article, index) => {
                 return (
                   <Link
@@ -371,36 +384,37 @@ export default async function Home() {
                 );
               })}
             </div> */}
-            <div className={cn("gap-2 w-full hidden lg:grid", sate.length > 1 ? "block" : "hidden lg:hidden")}>
-              {sate.slice(1).map((article, index) => {
-                return (
-                  <Link
-                    href={`/saat-teduh/${article.slug}`}
-                    key={index}
-                  >
-                    <Article
-                      article={article}
-                      variant={"list"}
-                      type={"sate"}
-                      color={"pourri"}
-                    />
-                  </Link>
-                );
-              })}
+              <div className={cn("gap-2 w-full hidden lg:flex lg:flex-col h-fit", sate.length > 1 ? "block" : "hidden lg:hidden")}>
+                {sate.slice(1).map((article, index) => {
+                  return (
+                    <Link
+                      href={`/saat-teduh/${article.slug}`}
+                      key={index}
+                    >
+                      <Article
+                        article={article}
+                        variant={"list"}
+                        type={"sate"}
+                        color={"pourri"}
+                      />
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-          {sate.length > 1 && (
-            <Link
-              href={"/saat-teduh"}
-              className="mx-auto"
-            >
-              <Button variant="ghost">Lihat Renungan lainnya</Button>
-            </Link>
-          )}
-          {/* <h2 className="text-lg text-mandy-500/50 italic text-center">
+            {sate.length > 1 && (
+              <Link
+                href={"/saat-teduh"}
+                className="mx-auto"
+              >
+                <Button variant="ghost">Lihat Renungan lainnya</Button>
+              </Link>
+            )}
+            {/* <h2 className="text-lg text-mandy-500/50 italic text-center">
             Saat teduh & artikel rohani dapat diakses di tanggal 1 September guys! Pantengin terus yaa!
           </h2> */}
-        </Section>
+          </Section>
+        </Suspense>
         {/* <Section wrapperClassName={"p-0 px-0 pb-8"}>
           <h1 className="text-xl font-semibold text-center mx-auto md:text-2xl lg:text-3xl lg:mb-6">Artikel Rohani Lainnya</h1>
           <CustomCarousel>
