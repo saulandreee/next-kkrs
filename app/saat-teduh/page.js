@@ -7,6 +7,7 @@ import { faker } from "@faker-js/faker";
 import Pagination from "@/components/Pagination";
 import CtfArticle from "@/lib/article";
 import Link from "next/link";
+import _ from "lodash";
 
 var listArticle = [
   {
