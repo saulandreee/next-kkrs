@@ -8,11 +8,13 @@ import Pagination from "@/components/Pagination";
 import CtfArticle from "@/lib/article";
 import Link from "next/link";
 import _ from "lodash";
+import { cookies } from "next/headers";
 
 export const revalidate = 60;
 export const dynamicParams = true;
 
 export default async function SateListPage({ searchParams }) {
+  console.log(cookies());
   var data = await CtfArticle.getAllPosts();
   var sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
   sate = _.orderBy(sate, "date", "desc");

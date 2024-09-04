@@ -21,6 +21,8 @@ export default function SateLayout({ children }) {
           height={1966}
           quality={100}
           alt="article-page-background"
+          priority
+          loading="eager"
         />
       </div>
       <div className="absolute top-20 w-[115%] aspect-[1650/1721] overflow-hidden hidden md:inline-block left-1/2 -translate-x-1/2">
@@ -30,6 +32,8 @@ export default function SateLayout({ children }) {
           className="object-cover w-full"
           quality={100}
           alt="article-page-background"
+          priority
+          loading="eager"
         />
       </div>
       {children}

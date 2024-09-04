@@ -37,6 +37,7 @@ export default async function ArticleDetail({ searchParams, params }) {
           fill
           quality={100}
           className="object-cover w-full rounded-lg"
+          sizes="((min-width: 300px) and (max-width: 599px)) 400px, (min-width: 600px) 600px, 600px"
           priority
           loading="eager"
           alt={params.slug}
@@ -48,6 +49,7 @@ export default async function ArticleDetail({ searchParams, params }) {
           fill
           quality={100}
           className="object-cover w-full rounded-lg"
+          sizes="((min-width: 300px) and (max-width: 767px)) 480px, (min-width: 768px) 800px, 800px"
           priority
           loading="eager"
           alt={params.slug}
@@ -62,7 +64,7 @@ export default async function ArticleDetail({ searchParams, params }) {
         {documentToReactComponents(data.verse)}
       </div>
       <article className="text-sm md:text-base prose mb-4 lg:mb-6">{documentToReactComponents(data.html)}</article>
-      <p className="text-sm lg:text-sm italic text-mandy-500">Ditulis oleh: {data.author}</p>
+      {data.author && <p className="text-sm lg:text-sm italic text-mandy-500">Ditulis oleh: {data.author}</p>}
     </Section>
   );
 }
