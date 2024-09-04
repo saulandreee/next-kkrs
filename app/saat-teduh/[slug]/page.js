@@ -5,6 +5,19 @@ import { faker } from "@faker-js/faker";
 import moment from "moment";
 import Image from "next/image";
 
+export const revalidate = 60;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  let listSate = await CtfArticle.getAllPosts(undefined, undefined, 10);
+  return listSate.items.map((sate) => {
+    console.log(sate.fields.slug);
+    return {
+      slug: sate.fields.slug,
+    };
+  });
+}
+
 export default async function ArticleDetail({ searchParams, params }) {
   var data = await CtfArticle.getAllPosts(params.slug, undefined);
   data = data.items.map((item) => {

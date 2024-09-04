@@ -8,6 +8,8 @@ export const metadata = {
   description: "KKRS 2024 tahun ini bertema The Greatest Love Story",
 };
 
+export const experimental_ppr = true;
+
 export default function SateLayout({ children }) {
   return (
     <main className="relative overflow-hidden">

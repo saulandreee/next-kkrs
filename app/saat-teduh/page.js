@@ -9,59 +9,10 @@ import CtfArticle from "@/lib/article";
 import Link from "next/link";
 import _ from "lodash";
 
-var listArticle = [
-  {
-    image: faker.image.url(80, 64),
-    title: faker.lorem.sentences(1),
-    date: faker.date.recent(),
-    author: faker.person.fullName(),
-    description: faker.lorem.sentences(2),
-    bible: "Yohanes 3 : 16",
-  },
-  {
-    image: faker.image.url(80, 64),
-    title: faker.lorem.sentences(1),
-    date: faker.date.recent(),
-    author: faker.person.fullName(),
-    description: faker.lorem.sentences(2),
-    bible: "Yohanes 3 : 16",
-  },
-  {
-    image: faker.image.url(80, 64),
-    title: faker.lorem.sentences(1),
-    date: faker.date.recent(),
-    author: faker.person.fullName(),
-    description: faker.lorem.sentences(2),
-    bible: "Yohanes 3 : 16",
-  },
-  {
-    image: faker.image.url(80, 64),
-    title: faker.lorem.sentences(1),
-    date: faker.date.recent(),
-    author: faker.person.fullName(),
-    description: faker.lorem.sentences(2),
-    bible: "Yohanes 3 : 16",
-  },
-  {
-    image: faker.image.url(80, 64),
-    title: faker.lorem.sentences(1),
-    date: faker.date.recent(),
-    author: faker.person.fullName(),
-    description: faker.lorem.sentences(2),
-    bible: "Yohanes 3 : 16",
-  },
-  {
-    image: faker.image.url(80, 64),
-    title: faker.lorem.sentences(1),
-    date: faker.date.recent(),
-    author: faker.person.fullName(),
-    description: faker.lorem.sentences(2),
-    bible: "Yohanes 3 : 16",
-  },
-];
+export const revalidate = 60;
+export const dynamicParams = true;
 
-export default async function ArticleListPage({ searchParams }) {
-  console.log(searchParams);
+export default async function SateListPage({ searchParams }) {
   var data = await CtfArticle.getAllPosts();
   var sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
   sate = _.orderBy(sate, "date", "desc");
