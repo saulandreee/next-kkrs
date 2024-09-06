@@ -389,7 +389,7 @@ export default async function Home({ searchParams }) {
                 );
               })}
             </div> */}
-              <div className={cn("gap-2 w-full hidden lg:flex lg:flex-col h-fit", sate.length > 1 ? "block" : "hidden lg:hidden")}>
+              <div className={cn("flex flex-col gap-2 w-full h-fit")}>
                 {sate.slice(1).map((article, index) => {
                   return (
                     <Link
