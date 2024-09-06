@@ -17,7 +17,7 @@ export default async function SateListPage({ searchParams }) {
   console.log(cookies());
   var data = await CtfArticle.getAllPosts();
   var sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
-  sate = _.orderBy(sate, "date", "desc");
+  // sate = _.orderBy(sate, "date", "desc");
 
   return (
     <>
