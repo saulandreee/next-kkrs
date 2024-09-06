@@ -12,12 +12,17 @@ import { cookies } from "next/headers";
 
 export const revalidate = 60;
 export const dynamicParams = true;
+const POSTS_PER_PAGE = 10;
 
 export default async function SateListPage({ searchParams }) {
   console.log(cookies());
-  var data = await CtfArticle.getAllPosts();
+  var data = await CtfArticle.getAllSate(undefined, undefined, POSTS_PER_PAGE, parseInt(searchParams.page) || 1);
+  console.log("======================");
+  console.log(data);
   var sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
+  var totalPage = Math.ceil(data.total / POSTS_PER_PAGE);
   // sate = _.orderBy(sate, "date", "desc");
+  console.log(totalPage);
 
   return (
     <>
@@ -53,12 +58,12 @@ export default async function SateListPage({ searchParams }) {
             );
           })}
         </div>
-        {/* <div>
+        <div>
           <Pagination
-            count={2}
+            count={totalPage || 1}
             page={parseInt(searchParams.page) || 1}
           />
-        </div> */}
+        </div>
       </Section>
     </>
   );

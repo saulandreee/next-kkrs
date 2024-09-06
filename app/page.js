@@ -207,7 +207,7 @@ export const dynamicParams = true;
 
 export default async function Home({ searchParams }) {
   console.log(cookies());
-  var data = await CtfArticle.getAllPosts(undefined, undefined, 4);
+  var data = await CtfArticle.getAllSate(undefined, undefined, 4);
   var sate = data.items.map((item) => ({ ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url }));
   // sate = _.orderBy(sate, "date", "desc");
   // var timeoutid = await new Promise((resolve, reject) => setTimeout(() => resolve(), 5000));

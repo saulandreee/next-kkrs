@@ -9,7 +9,7 @@ export const revalidate = 60;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  let listSate = await CtfArticle.getAllPosts(undefined, undefined, 10);
+  let listSate = await CtfArticle.getAllSate(undefined, undefined, 10);
   return listSate.items.map((sate) => {
     console.log(sate.fields.slug);
     return {
@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ArticleDetail({ searchParams, params }) {
-  var data = await CtfArticle.getAllPosts(params.slug, undefined);
+  var data = await CtfArticle.getAllSate(params.slug);
   data = data.items.map((item) => {
     console.log(item.fields.cover_image.fields.file.url);
     return { ...item.fields, image_url: "https:" + item.fields.cover_image.fields.file.url };
